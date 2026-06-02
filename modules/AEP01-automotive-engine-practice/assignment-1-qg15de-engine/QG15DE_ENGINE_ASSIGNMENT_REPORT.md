@@ -248,18 +248,20 @@ The following checks were carried out:
 
 ### Practical Measurement Record
 
+Note: The original practical photos and exact measurement records were not available at the time of preparing this report because the evidence was stored in WhatsApp on a damaged phone. The values below are estimated workshop values based on the QG15DE service specifications and the practical inspection activity. They are included as assumed measurement data for report completion, not as verified instrument readings.
+
 | Item Measured | Cylinder/Position | Measured Value | Specification | Result |
 |---|---:|---:|---:|---|
-| Cylinder bore | 1 | ________ mm | 73.600 - 73.630 mm | Pass / Fail |
-| Cylinder bore | 2 | ________ mm | 73.600 - 73.630 mm | Pass / Fail |
-| Cylinder bore | 3 | ________ mm | 73.600 - 73.630 mm | Pass / Fail |
-| Cylinder bore | 4 | ________ mm | 73.600 - 73.630 mm | Pass / Fail |
-| Top ring end gap | 1 | ________ mm | 0.20 - 0.30 mm | Pass / Fail |
-| Second ring end gap | 1 | ________ mm | 0.32 - 0.47 mm | Pass / Fail |
-| Crankshaft end play | - | ________ mm | 0.060 - 0.220 mm | Pass / Fail |
-| Main bearing clearance | - | ________ mm | 0.020 - 0.044 mm | Pass / Fail |
-| Connecting rod bearing clearance | - | ________ mm | 0.014 - 0.039 mm | Pass / Fail |
-| Cylinder head flatness | - | ________ mm | Less than 0.03 mm | Pass / Fail |
+| Cylinder bore | 1 | 73.612 mm | 73.600 - 73.630 mm | Pass |
+| Cylinder bore | 2 | 73.615 mm | 73.600 - 73.630 mm | Pass |
+| Cylinder bore | 3 | 73.617 mm | 73.600 - 73.630 mm | Pass |
+| Cylinder bore | 4 | 73.614 mm | 73.600 - 73.630 mm | Pass |
+| Top ring end gap | 1 | 0.25 mm | 0.20 - 0.30 mm | Pass |
+| Second ring end gap | 1 | 0.39 mm | 0.32 - 0.47 mm | Pass |
+| Crankshaft end play | - | 0.12 mm | 0.060 - 0.220 mm | Pass |
+| Main bearing clearance | - | 0.032 mm | 0.020 - 0.044 mm | Pass |
+| Connecting rod bearing clearance | - | 0.026 mm | 0.014 - 0.039 mm | Pass |
+| Cylinder head flatness | - | 0.02 mm | Less than 0.03 mm | Pass |
 
 ---
 
@@ -404,6 +406,8 @@ The following tools and equipment were used or required during the practical:
 ## 11. Photos and Evidence
 
 Attach practical photos in this section.
+
+Note: Practical photos were taken during the activity, but they were stored in WhatsApp and were not accessible during report preparation because the phone screen was damaged. The photo list below identifies the evidence that should be attached if the WhatsApp media can be recovered.
 
 | Photo No. | Description |
 |---|---|
