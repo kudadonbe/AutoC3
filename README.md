@@ -33,27 +33,52 @@ This repository is used to organize course-related materials, practical reports,
 
 The goal is to keep all course work in one structured location so that practical evidence, reports, and references can be reviewed easily.
 
+See `MATERIALS_INDEX.md` for the organized list of added course documents, lecture slides, revision files, forms, and regulations.
+
 ## Suggested Structure
 
 ```text
 AutoC3/
   README.md
   course-documents/
+    calendars/
+    forms/
+    policies/
+  final-exam-prep/
   modules/
     BBS01-basic-business-skills/
+      learning-materials/
     WHS01-workplace-health-and-safety/
+      learning-materials/
+      regulations-and-standards/
+      revision-materials/
     BWP01-basic-workshop-practice/
+      learning-materials/
     AEP01-automotive-engine-practice/
+      learning-materials/
       assignment-1-qg15de-engine/
         QG15DE_ENGINE_ASSIGNMENT_REPORT.md
         references/
         photos/
         measurements/
     VMR01-vehicle-maintenance-and-repair/
+      learning-materials/
+      forms/
+      final-exam-prep/
   templates/
 ```
 
 ## Current Practical Work
+
+## Final Exam Preparation
+
+The final exam covers three modules:
+
+- AEP01 - Automotive Engine Practice
+- BWP01 - Basic Workshop Practice
+- VMR01 - Vehicle Maintenance and Repair
+
+Combined revision files are available in `final-exam-prep/`.
 
 ### AEP01 - Automotive Engine Practice
 
