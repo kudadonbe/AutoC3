@@ -8,29 +8,19 @@
 
 ![Report cover crankshaft measurement image](photos/00%20Report%20Cover%20-%20Crankshaft%20Measurement%20Portrait.jpg)
 
-**Student Name:** Hussain Shareef
+**Maldives Polytechnic**
 
-**Matric Number:** 15472
+## Engine Disassembly and Assembly Report
 
-**National ID:** A147829
+Nissan QG15DE practical assignment for Automotive Engine Practice.
 
-**Institution:** Maldives Polytechnic
+**Student:** Hussain Shareef
 
-**Course Code:** ME03ARM
+**Course:** ME03ARM - Certificate III in Automotive Repair & Maintenance
 
-**Course Title:** Certificate III in Automotive Repair & Maintenance
+**Module:** AEP01 - Automotive Engine Practice
 
-**Year / Term:** 2026 / Term 1
-
-**Module Code:** AEP01
-
-**Module Name:** Automotive Engine Practice
-
-**Assignment:** Assignment 1 Practical Test
-
-**Topic:** Disassembly and Assembly of Engine Components
-
-**Engine Used:** Nissan QG15DE
+**Engine:** Nissan QG15DE
 
 **Date:** 21 April 2026
 
