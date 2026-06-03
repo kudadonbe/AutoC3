@@ -1,6 +1,12 @@
-# Assignment 1: Engine Disassembly and Assembly
+# Engine Disassembly and Assembly Report
 
-## Cover Page
+## Official Cover Page
+
+![Official Maldives Polytechnic assignment cover page](../../../course-documents/forms/Assignment%20Cover%20Page.jpg)
+
+## Report Cover
+
+![Report cover crankshaft measurement image](photos/00%20Report%20Cover%20-%20Crankshaft%20Measurement%20Portrait.jpg)
 
 **Student Name:** Hussain Shareef
 
@@ -33,6 +39,10 @@
 ## 1. Introduction
 
 This practical test was carried out to understand the correct procedure for disassembling, inspecting, measuring, and assembling an internal combustion engine. The engine used for this practical was the Nissan QG15DE petrol engine.
+
+![Nissan QG15DE engine before disassembly](photos/01%20Engine%20Before%20Disassembly%20-%20Intake%20Side.jpg)
+
+**Figure 1.** Nissan QG15DE engine mounted on the stand before practical disassembly work began. This stage was used to identify external components and prepare the engine for teardown.
 
 The main objective of this practical was to identify major engine components, remove them in the correct sequence, inspect them for wear or damage, take important measurements, and reassemble the engine using correct workshop procedures. During the activity, safety, cleanliness, correct tool usage, and manufacturer specifications were followed as important requirements.
 
@@ -177,6 +187,10 @@ Main steps:
 
 The QG15DE uses a timing chain system. During removal, the timing marks on the chain and sprockets were observed and recorded. The chain tensioner and guides were removed carefully.
 
+![Timing chain and camshaft sprockets exposed](photos/05%20Timing%20Chain%20Front%20View.jpg)
+
+**Figure 2.** Timing chain, camshaft sprockets, and front timing components exposed before removal. Timing alignment was checked before the chain was removed.
+
 Important points:
 
 - Timing marks must be aligned before removal.
@@ -187,6 +201,10 @@ Important points:
 ### 6.3 Bottom End Teardown
 
 After the cylinder head and timing components were removed, the bottom end was disassembled.
+
+![Pistons and connecting rods arranged in order](photos/edited/18%20Pistons%20and%20Connecting%20Rods%20Arranged%20-%20Rotated.jpg)
+
+**Figure 3.** Pistons and connecting rods arranged after removal. Keeping these parts in order prevents mixing components that have worn together during engine operation.
 
 Main steps:
 
@@ -211,6 +229,10 @@ After disassembly, all components were cleaned and inspected. Carbon buildup, ol
 ### Visual Inspection
 
 The following checks were carried out:
+
+![Cylinder block and main bearing saddles](photos/edited/20%20Main%20Bearing%20Saddles%20and%20Cylinder%20Block%20-%20Rotated.jpg)
+
+**Figure 4.** Cylinder block lower section and main bearing saddles after crankshaft removal. Bearing surfaces were inspected for scoring, abnormal wear, and cleanliness.
 
 - Cylinder head checked for cracks, corrosion, and warping.
 - Cylinder block checked for cracks, scoring, and damaged threads.
@@ -436,31 +458,31 @@ The following tools and equipment were used or required during the practical:
 
 ## 11. Photos and Evidence
 
-Practical photos are stored in the `photos/` folder for this assignment.
+Selected practical photos are included in the report body, and the full evidence set is provided in Appendix A.
 
-| Photo No. | File Name | Description |
-|---:|---|---|
-| 1 | `01 Engine Before Disassembly - Intake Side.jpg` | Engine before disassembly, intake side view |
-| 2 | `02 Engine Before Disassembly - Exhaust Side.jpg` | Engine before disassembly, exhaust side view |
-| 3 | `03 Valve Cover Installed - Spark Plugs Removed.jpg` | Valve cover installed with spark plugs removed |
-| 4 | `04 Valve Cover Removed.jpg` | Valve cover removed and placed separately |
-| 5 | `05 Timing Chain Front View.jpg` | Timing chain and camshaft sprockets, front view |
-| 6 | `06 Timing Chain Side View.jpg` | Timing chain and timing components, side view |
-| 7 | `07 Timing Chain Tensioner Removal.jpg` | Timing chain tensioner removal process |
-| 8 | `08 Camshafts and Timing Components Laid Out.jpg` | Camshafts, sprockets, chain, guides, and caps arranged in order |
-| 9 | `09 Cylinder Head and Camshafts Exposed.jpg` | Cylinder head top section with camshafts exposed |
-| 10 | `10 Intake Manifold Removal.jpg` | Intake manifold being removed from the engine |
-| 11 | `11 Intake Manifold Detail.jpg` | Intake manifold and fuel rail detail |
-| 12 | `12 Exhaust Manifold Installed.jpg` | Exhaust manifold installed on the engine |
-| 13 | `13 Exhaust Manifold Removal.jpg` | Exhaust manifold removal process |
-| 14 | `14 Exhaust Manifold and Catalytic Converter Removed.jpg` | Exhaust manifold and catalytic converter removed |
-| 15 | `15 Coolant Outlet and Pump Installed.jpg` | Coolant outlet and pump area installed on the engine |
-| 16 | `16 Coolant Outlet Detail.jpg` | Coolant outlet detail after removal |
-| 17 | `17 Single Piston and Connecting Rod Removed.jpg` | Single piston and connecting rod assembly removed |
-| 18 | `18 Pistons and Connecting Rods Arranged.jpg` | Pistons and connecting rods arranged in order |
-| 19 | `19 Crankshaft Removed.jpg` | Crankshaft removed and placed on the workbench |
-| 20 | `20 Main Bearing Saddles and Cylinder Block.jpg` | Cylinder block lower section and main bearing saddles |
-| 21 | `21 Student Performing Engine Work.jpg` | Student carrying out practical engine work |
+| Appendix A Ref. | Description |
+|---|---|
+| A1. Engine before disassembly - intake side | Engine before disassembly, intake side view |
+| A2. Engine before disassembly - exhaust side | Engine before disassembly, exhaust side view |
+| A3. Valve cover installed | Valve cover installed with spark plugs removed |
+| A4. Valve cover removed | Valve cover removed and placed separately |
+| A5. Timing chain front view | Timing chain and camshaft sprockets, front view |
+| A6. Timing chain side view | Timing chain and timing components, side view |
+| A7. Timing chain tensioner removal | Timing chain tensioner removal process |
+| A8. Camshafts and timing components laid out | Camshafts, sprockets, chain, guides, and caps arranged in order |
+| A9. Cylinder head and camshafts exposed | Cylinder head top section with camshafts exposed |
+| A10. Intake manifold removal | Intake manifold being removed from the engine |
+| A11. Intake manifold detail | Intake manifold and fuel rail detail |
+| A12. Exhaust manifold installed | Exhaust manifold installed on the engine |
+| A13. Exhaust manifold removal | Exhaust manifold removal process |
+| A14. Exhaust manifold and catalytic converter removed | Exhaust manifold and catalytic converter removed |
+| A15. Coolant outlet and pump installed | Coolant outlet and pump area installed on the engine |
+| A16. Coolant outlet detail | Coolant outlet detail after removal |
+| A17. Single piston and connecting rod removed | Single piston and connecting rod assembly removed |
+| A18. Pistons and connecting rods arranged | Pistons and connecting rods arranged in order |
+| A19. Crankshaft removed | Crankshaft removed and placed on the workbench |
+| A20. Main bearing saddles and cylinder block | Cylinder block lower section and main bearing saddles |
+| A21. Student performing engine work | Student carrying out practical engine work |
 
 ---
 
@@ -477,3 +499,127 @@ The final check confirmed that the engine should rotate freely by hand and that 
 ## 13. References
 
 - Nissan QG15DE Engine Mechanical Service Manual, Section EM.
+
+---
+
+## Appendix A: Practical Photo Evidence
+
+The following photos show the engine before disassembly, component removal, timing system, internal engine parts, and practical workshop activity.
+
+![Engine before disassembly, intake side](photos/01%20Engine%20Before%20Disassembly%20-%20Intake%20Side.jpg)
+
+**A1.** Engine before disassembly - intake side
+
+![Engine before disassembly, exhaust side](photos/02%20Engine%20Before%20Disassembly%20-%20Exhaust%20Side.jpg)
+
+**A2.** Engine before disassembly - exhaust side
+
+![Valve cover installed with spark plugs removed](photos/03%20Valve%20Cover%20Installed%20-%20Spark%20Plugs%20Removed.jpg)
+
+**A3.** Valve cover installed with spark plugs removed
+
+![Valve cover removed](photos/04%20Valve%20Cover%20Removed.jpg)
+
+**A4.** Valve cover removed
+
+![Timing chain front view](photos/05%20Timing%20Chain%20Front%20View.jpg)
+
+**A5.** Timing chain front view
+
+![Timing chain side view](photos/06%20Timing%20Chain%20Side%20View.jpg)
+
+**A6.** Timing chain side view
+
+![Timing chain tensioner removal](photos/07%20Timing%20Chain%20Tensioner%20Removal.jpg)
+
+**A7.** Timing chain tensioner removal
+
+![Camshafts and timing components laid out](photos/08%20Camshafts%20and%20Timing%20Components%20Laid%20Out.jpg)
+
+**A8.** Camshafts and timing components laid out
+
+![Cylinder head and camshafts exposed](photos/09%20Cylinder%20Head%20and%20Camshafts%20Exposed.jpg)
+
+**A9.** Cylinder head and camshafts exposed
+
+![Intake manifold removal](photos/10%20Intake%20Manifold%20Removal.jpg)
+
+**A10.** Intake manifold removal
+
+![Intake manifold detail](photos/11%20Intake%20Manifold%20Detail.jpg)
+
+**A11.** Intake manifold detail
+
+![Exhaust manifold installed](photos/12%20Exhaust%20Manifold%20Installed.jpg)
+
+**A12.** Exhaust manifold installed
+
+![Exhaust manifold removal](photos/13%20Exhaust%20Manifold%20Removal.jpg)
+
+**A13.** Exhaust manifold removal
+
+![Exhaust manifold and catalytic converter removed](photos/14%20Exhaust%20Manifold%20and%20Catalytic%20Converter%20Removed.jpg)
+
+**A14.** Exhaust manifold and catalytic converter removed
+
+![Coolant outlet and pump installed](photos/15%20Coolant%20Outlet%20and%20Pump%20Installed.jpg)
+
+**A15.** Coolant outlet and pump installed
+
+![Coolant outlet detail](photos/16%20Coolant%20Outlet%20Detail.jpg)
+
+**A16.** Coolant outlet detail
+
+![Single piston and connecting rod removed](photos/17%20Single%20Piston%20and%20Connecting%20Rod%20Removed.jpg)
+
+**A17.** Single piston and connecting rod removed
+
+![Pistons and connecting rods arranged](photos/18%20Pistons%20and%20Connecting%20Rods%20Arranged.jpg)
+
+**A18.** Pistons and connecting rods arranged
+
+![Crankshaft removed](photos/19%20Crankshaft%20Removed.jpg)
+
+**A19.** Crankshaft removed
+
+![Main bearing saddles and cylinder block](photos/20%20Main%20Bearing%20Saddles%20and%20Cylinder%20Block.jpg)
+
+**A20.** Main bearing saddles and cylinder block
+
+![Student performing engine work](photos/21%20Student%20Performing%20Engine%20Work.jpg)
+
+**A21.** Student performing engine work
+
+---
+
+## Appendix B: Measurement Record Evidence
+
+The following photos show handwritten workshop measurement diagrams and record sheets used during the practical.
+
+![Crankshaft measurement record sheet](measurements/01%20Crankshaft%20Measurement%20Record%20Sheet.jpg)
+
+**B1.** Crankshaft measurement record sheet
+
+![Intake camshaft measurement record sheet](measurements/02%20Intake%20Camshaft%20Measurement%20Record%20Sheet.jpg)
+
+**B2.** Intake camshaft measurement record sheet
+
+![Crankshaft journal digital notes](measurements/03%20Crankshaft%20Journal%20Digital%20Notes.jpg)
+
+**B3.** Crankshaft journal digital notes
+
+![Crankshaft and valve measurement record sheet](measurements/04%20Crankshaft%20and%20Valve%20Measurement%20Record%20Sheet.jpg)
+
+**B4.** Crankshaft and valve measurement record sheet
+
+![Piston pin and valve measurement record sheet](measurements/05%20Piston%20Pin%20and%20Valve%20Measurement%20Record%20Sheet.jpg)
+
+**B5.** Piston pin and valve measurement record sheet
+
+![Inlet valve measurement detail](measurements/06%20Inlet%20Valve%20Measurement%20Detail.jpg)
+
+**B6.** Inlet valve measurement detail
+
+![Inlet valve measurement detail close view](measurements/07%20Inlet%20Valve%20Measurement%20Detail%20Close%20View.jpg)
+
+**B7.** Inlet valve measurement close view
