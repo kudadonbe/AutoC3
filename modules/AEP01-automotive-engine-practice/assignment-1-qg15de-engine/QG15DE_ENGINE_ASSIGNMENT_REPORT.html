@@ -1,0 +1,858 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>QG15DE Engine Assignment Report</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 16mm 14mm 18mm;
+      @top-center {
+        content: "Engine Disassembly and Assembly Report";
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 8.5pt;
+        line-height: 1;
+        color: #64748b;
+        border-bottom: 0.4pt solid #cbd5e1;
+        padding-bottom: 0.4mm;
+      }
+      @bottom-center {
+        content: "──────────────────────────────\A Page " counter(page) " of " counter(pages);
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 8.5pt;
+        line-height: 1.1;
+        white-space: pre;
+        color: #64748b;
+        vertical-align: middle;
+      }
+    }
+    @page cover {
+      size: A4;
+      margin: 14mm;
+      @top-center {
+        content: "";
+        border-bottom: 0;
+        padding-bottom: 0;
+      }
+      @bottom-center {
+        content: "";
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      max-width: 980px;
+      margin: 32px auto;
+      padding: 0 24px 48px;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #1f2933;
+      font-size: 16px;
+      line-height: 1.55;
+      background: #ffffff;
+    }
+    h1 { font-size: 34px; text-align: center; margin: 0 0 24px; color: #111827; }
+    h2 { font-size: 24px; margin: 34px 0 12px; padding-bottom: 6px; border-bottom: 1px solid #cbd5e1; color: #111827; break-after: avoid; page-break-after: avoid; }
+    h3 { font-size: 19px; margin: 22px 0 8px; color: #111827; break-after: avoid; page-break-after: avoid; }
+    p { margin: 9px 0; orphans: 3; widows: 3; }
+    ul, ol { margin: 8px 0 14px 26px; padding: 0; orphans: 3; widows: 3; }
+    li { margin: 4px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 10px 0 18px; break-inside: auto; page-break-inside: auto; }
+th, td { border: 1px solid #9ca3af; padding: 7px 8px; vertical-align: top; }
+th { background: #e5e7eb; font-weight: 700; }
+.measurement-table th:nth-child(2),
+.measurement-table td:nth-child(2),
+.step-table th:nth-child(1),
+.step-table td:nth-child(1) {
+  text-align: center;
+}
+hr { border: 0; border-top: 1px solid #d1d5db; margin: 24px 0; }
+    code { font-family: Consolas, monospace; font-size: 0.95em; }
+    .official-cover {
+      page: cover;
+      width: 210mm;
+      min-height: 285mm;
+      margin: 0 auto;
+      padding: 0;
+      background: #ffffff;
+      page-break-after: always;
+      break-after: page;
+    }
+    .official-cover img {
+      display: block;
+      width: 100%;
+      height: 285mm;
+      object-fit: contain;
+      background: #ffffff;
+    }
+    .cover {
+      page: cover;
+      position: relative;
+      min-height: 1040px;
+      padding: 42px;
+      overflow: hidden;
+      border: 1px solid #cbd5e1;
+      background: #ffffff;
+      page-break-after: always;
+    }
+    .cover::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: url("photos/00%20Report%20Cover%20-%20Crankshaft%20Measurement%20Portrait.jpg") 82% center / cover no-repeat;
+      transform: scaleX(-1);
+    }
+    .cover::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 84% 57%, rgba(255, 255, 255, 0.00) 0%, rgba(255, 255, 255, 0.00) 16%, rgba(255, 255, 255, 0.36) 30%, rgba(255, 255, 255, 0.78) 48%),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.84) 0%, rgba(255, 255, 255, 0.58) 42%, rgba(255, 255, 255, 0.20) 74%);
+    }
+    .cover-content {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: flex-end;
+      min-height: 940px;
+    }
+    .cover-main {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      width: min(520px, 56%);
+      min-height: auto;
+      padding: 28px 30px;
+      background: rgba(255, 255, 255, 0.92);
+      border-top: 5px solid #0f766e;
+      box-shadow: 0 14px 34px rgba(15, 23, 42, 0.16);
+    }
+    .institution {
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #475569;
+    }
+    .cover-title {
+      margin-top: 28px;
+    }
+    .cover-title h1 {
+      text-align: left;
+      font-size: 44px;
+      line-height: 1.05;
+      margin: 0 0 14px;
+      color: #0f172a;
+    }
+    .cover-title p {
+      max-width: 520px;
+      font-size: 18px;
+      color: #334155;
+      margin: 0;
+    }
+    .cover-details {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 5px;
+      margin-top: 26px;
+      padding-top: 14px;
+      border-top: 2px solid #0f172a;
+      font-size: 14px;
+    }
+    .cover-details div {
+      color: #111827;
+    }
+    .cover-details strong { color: #334155; }
+    .feature-photo {
+      display: block;
+      margin: 18px 0 22px;
+      break-inside: avoid;
+    }
+    .feature-photo img {
+      width: auto;
+      max-width: 100%;
+      height: auto;
+      max-height: 340px;
+      object-fit: contain;
+      margin: 0 auto;
+      border: 1px solid #cbd5e1;
+      background: #ffffff;
+    }
+    .feature-photo figcaption {
+      display: block;
+      padding: 10px 12px;
+      border: 1px solid #cbd5e1;
+      border-top: 0;
+      border-left: 4px solid #0f766e;
+      background: #f8fafc;
+      font-size: 15px;
+      line-height: 1.45;
+    }
+    .feature-photo figcaption strong {
+      display: inline-block;
+      margin-right: 6px;
+    }
+    .photo-block,
+    .section-opening {
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+    .appendix { margin-top: 36px; break-before: page; page-break-before: always; }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 14px;
+    }
+    figure {
+      margin: 0;
+      border: 1px solid #cbd5e1;
+      background: #f8fafc;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+    img {
+      display: block;
+      width: 100%;
+      height: 340px;
+      object-fit: contain;
+      background: #ffffff;
+    }
+    figcaption {
+      padding: 8px 10px;
+      font-size: 14px;
+      color: #374151;
+      border-top: 1px solid #cbd5e1;
+      background: #f1f5f9;
+    }
+    @media (max-width: 760px) {
+      body { margin: 18px auto; padding: 0 14px 32px; }
+      .cover { min-height: auto; padding: 22px; }
+      .cover-content { min-height: auto; }
+      .cover-main { width: 100%; min-height: auto; }
+      .cover-title { margin-top: 40px; }
+      .cover-title h1 { font-size: 34px; }
+      .cover-details { grid-template-columns: 1fr; }
+      .gallery { grid-template-columns: 1fr; }
+      img { height: auto; max-height: none; }
+    }
+    @media print {
+      html, body { width: 182mm; }
+      body { max-width: none; margin: 0; padding: 2mm 0 0; font-size: 10.8pt; line-height: 1.36; }
+      h1 { font-size: 22pt; }
+      h2 {
+        font-size: 15pt;
+        margin: 6mm 0 3mm;
+        break-after: avoid-page;
+        page-break-after: avoid;
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+      h3 {
+        font-size: 12.5pt;
+        margin: 4mm 0 2mm;
+        break-after: avoid-page;
+        page-break-after: avoid;
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+      p { margin: 2.4mm 0; }
+      ul, ol { margin-top: 2mm; margin-bottom: 3mm; }
+      hr { margin: 5mm 0; }
+      p, li { orphans: 3; widows: 3; }
+      table { font-size: 9.5pt; margin: 3mm 0 4mm; break-inside: auto; page-break-inside: auto; }
+      thead { display: table-header-group; }
+      tfoot { display: table-footer-group; }
+      tr, th, td, figure, .feature-photo, .photo-block, .section-opening { break-inside: avoid; page-break-inside: avoid; }
+      h2 + p, h2 + table, h2 + ul, h2 + ol, h2 + .feature-photo,
+      h3 + p, h3 + table, h3 + ul, h3 + ol, h3 + .feature-photo,
+      p + .feature-photo {
+        break-before: avoid;
+        page-break-before: avoid;
+      }
+      .official-cover { width: 182mm; min-height: 258mm; margin: 0; padding: 0; }
+      .official-cover img { width: 182mm; height: 258mm; }
+      .cover { min-height: 267mm; padding: 14mm; border: 0; }
+      .cover-content { min-height: 238mm; align-items: flex-end; }
+      .cover-main { min-height: auto; width: 54%; padding: 9mm; }
+      .cover-title { margin-top: 12mm; }
+      .cover-details { grid-template-columns: 1fr; gap: 1.5mm; margin-top: 8mm; }
+      .cover-title h1 { font-size: 31pt; }
+      .cover-details { font-size: 10.5pt; }
+      .photo-block h3, .section-opening h2 { margin-top: 0; }
+      .feature-photo { margin: 4mm 0 5mm; }
+      .feature-photo img { width: auto; max-width: 100%; height: auto; max-height: 62mm; }
+      .feature-photo figcaption { font-size: 9.8pt; padding: 2.8mm 3.2mm; }
+      .gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+      img { height: 70mm; }
+      figcaption { font-size: 9.5pt; }
+      .appendix { margin-top: 0; break-before: page; page-break-before: always; }
+    }
+</style>
+</head>
+<body>
+<section class="official-cover" aria-label="Official assignment cover page">
+  <img src="../../../course-documents/forms/Assignment%20Cover%20Page.jpg" alt="Official Maldives Polytechnic assignment cover page">
+</section>
+<section class="cover">
+  <div class="cover-content">
+    <div class="cover-main">
+      <div>
+        <div class="institution">Maldives Polytechnic</div>
+        <div class="cover-title">
+          <h1>Engine Disassembly and Assembly Report</h1>
+          <p>Nissan QG15DE practical assignment for Automotive Engine Practice.</p>
+        </div>
+      </div>
+      <div class="cover-details">
+        <div><strong>Student:</strong> Hussain Shareef</div>
+        <div><strong>Course:</strong> ME03ARM - Certificate III in Automotive Repair &amp; Maintenance</div>
+        <div><strong>Module:</strong> AEP01 - Automotive Engine Practice</div>
+        <div><strong>Engine:</strong> Nissan QG15DE</div>
+        <div><strong>Date:</strong> 21 April 2026</div>
+      </div>
+    </div>
+  </div>
+</section>
+<h2>1. Introduction</h2>
+<p>This practical test was carried out to understand the correct procedure for disassembling, inspecting, measuring, and assembling an internal combustion engine. The engine used for this practical was the Nissan QG15DE petrol engine.</p>
+<figure class="feature-photo">
+  <img src="photos/01%20Engine%20Before%20Disassembly%20-%20Intake%20Side.jpg" alt="Nissan QG15DE engine before disassembly">
+  <figcaption><strong>Figure 1.</strong> Nissan QG15DE engine mounted on the stand before practical disassembly work began. This stage was used to identify external components and prepare the engine for teardown.</figcaption>
+</figure>
+<p>The main objective of this practical was to identify major engine components, remove them in the correct sequence, inspect them for wear or damage, take important measurements, and reassemble the engine using correct workshop procedures. During the activity, safety, cleanliness, correct tool usage, and manufacturer specifications were followed as important requirements.</p>
+<h3>Objective</h3>
+<p>The objectives of this practical were:</p>
+<ul>
+<li>To prepare a safe and clean workshop area for engine work.</li>
+<li>To identify the main external and internal engine components.</li>
+<li>To disassemble the engine step by step.</li>
+<li>To inspect engine components for cracks, scoring, carbon buildup, and excessive wear.</li>
+<li>To measure important clearances and compare them with specifications.</li>
+<li>To assemble the engine correctly using lubrication, correct alignment, and correct tightening procedures.</li>
+<li>To understand the importance of timing marks, torque specifications, and final engine checks.</li>
+</ul>
+<hr>
+<h2>2. Engine Specifications</h2>
+<p>The engine used in this practical was the Nissan QG15DE.</p>
+<table><thead><tr><th>Item</th><th>Specification</th></tr></thead><tbody>
+<tr><td>Engine model</td><td>Nissan QG15DE</td></tr>
+<tr><td>Engine type</td><td>Petrol / gasoline</td></tr>
+<tr><td>Cylinder arrangement</td><td>4-cylinder, in-line</td></tr>
+<tr><td>Valve arrangement</td><td>DOHC</td></tr>
+<tr><td>Displacement</td><td>1,497 cm3</td></tr>
+<tr><td>Bore x stroke</td><td>73.6 mm x 88.0 mm</td></tr>
+<tr><td>Firing order</td><td>1-3-4-2</td></tr>
+<tr><td>Compression ratio</td><td>9.9:1</td></tr>
+<tr><td>Number of main bearings</td><td>5</td></tr>
+<tr><td>Piston rings</td><td>2 compression rings and 1 oil ring</td></tr>
+<tr><td>Standard spark plug</td><td>NGK BKR5E-11</td></tr>
+<tr><td>Spark plug gap</td><td>1.0 - 1.1 mm</td></tr>
+<tr><td>Standard compression pressure</td><td>1,372 kPa / 198.9 psi at 350 rpm</td></tr>
+<tr><td>Minimum compression pressure</td><td>1,176 kPa / 170.5 psi</td></tr>
+<tr><td>Maximum difference between cylinders</td><td>98 kPa / 14 psi</td></tr>
+</tbody></table>
+<p>Additional details from the practical engine:</p>
+<table><thead><tr><th>Item</th><th>Practical Engine Detail</th></tr></thead><tbody>
+<tr><td>Make</td><td>Nissan</td></tr>
+<tr><td>Model</td><td>QG15DE</td></tr>
+<tr><td>Year</td><td>1999</td></tr>
+<tr><td>Serial number</td><td>Not confirmed - to be checked from engine block stamping if visible</td></tr>
+<tr><td>Vehicle/model source</td><td>_______________________________</td></tr>
+</tbody></table>
+<hr>
+<h2>3. Workspace Preparation</h2>
+<p>Before starting the disassembly process, the workspace was prepared properly. A clean and organized work area is important because engine components are precision parts and can be damaged by dirt, incorrect storage, or mixing up parts.</p>
+<p>The engine was placed securely on an engine stand before work started. The stand allowed safe access to the top, bottom, front, and rear sections of the engine. Tools were arranged before starting, and containers were prepared for bolts, nuts, washers, and small components.</p>
+<p>The following preparation steps were followed:</p>
+<ul>
+<li>The work area was cleaned and cleared of unnecessary items.</li>
+<li>The engine stand was checked to confirm it was stable and secure.</li>
+<li>Required tools were arranged before starting the work.</li>
+<li>Containers or trays were prepared to keep removed parts in order.</li>
+<li>Components such as pistons, connecting rods, bearing caps, and bolts were marked or arranged according to cylinder number.</li>
+<li>Waste containers were prepared for used oil and coolant.</li>
+</ul>
+<hr>
+<h2>4. Safety and PPE</h2>
+<p>Safety precautions were followed throughout the practical. Engine work involves heavy parts, sharp edges, hot fluids, chemical cleaners, and hand tools, so Occupational Health and Safety requirements must be followed.</p>
+<h3>PPE Used</h3>
+<ul>
+<li>Safety shoes</li>
+<li>Workshop overalls</li>
+<li>Safety gloves</li>
+<li>Safety goggles or eye protection</li>
+<li>Face mask when cleaning carbon or gasket material</li>
+</ul>
+<h3>Safety Precautions</h3>
+<ul>
+<li>The engine was supported securely before work started.</li>
+<li>The work area was kept clean and dry to prevent slipping.</li>
+<li>Oil and coolant were drained into suitable containers.</li>
+<li>Fuel lines and electrical connectors were handled carefully.</li>
+<li>Correct tools were used to avoid damaging bolts or components.</li>
+<li>Heavy components were lifted carefully with assistance when required.</li>
+<li>Removed parts were stored safely and labelled where necessary.</li>
+</ul>
+<hr>
+<h2>5. Pre-Disassembly Procedures</h2>
+<p>Before disassembling the engine, external checks and preparation were completed.</p>
+<h3>Fluid Drainage</h3>
+<p>The engine oil was drained by removing the oil drain plug and allowing the oil to flow into a suitable waste oil container. The coolant was drained from the cooling system into a separate container. Oil and coolant were not allowed to spill onto the floor because this can create a slipping hazard and cause environmental contamination.</p>
+<h3>External Component Removal</h3>
+<p>The following external components were removed before internal engine disassembly:</p>
+<ul>
+<li>Battery terminals were disconnected if the engine was still installed in the vehicle.</li>
+<li>Air intake components were removed.</li>
+<li>Intake manifold was removed or disconnected.</li>
+<li>Exhaust manifold was removed.</li>
+<li>Alternator was removed.</li>
+<li>Water pump and related cooling components were removed as required.</li>
+<li>Electrical connectors were disconnected carefully.</li>
+<li>Fuel lines and vacuum hoses were disconnected and identified.</li>
+<li>Drive belts were removed.</li>
+<li>Spark plugs and ignition coils were removed.</li>
+</ul>
+<p>During removal, bolts and nuts were kept in order to make assembly easier.</p>
+<hr>
+<h2>6. Engine Disassembly Procedure</h2>
+<h3>6.1 Cylinder Head Removal</h3>
+<p>The valve cover was removed first to expose the camshafts and valve train area. The No. 1 piston was positioned at Top Dead Center on the compression stroke before timing components were removed.</p>
+<p>The timing marks were checked and recorded before the timing chain was removed. This is important because incorrect timing during assembly can cause poor engine operation or valve damage.</p>
+<p>The cylinder head bolts were loosened gradually in the correct sequence. The bolts were loosened in two or three stages to prevent cylinder head warping. Removing the cylinder head bolts in the wrong order can cause distortion or cracking.</p>
+<p>Main steps:</p>
+<ol>
+<li>Remove valve cover.</li>
+<li>Remove ignition coils and spark plugs.</li>
+<li>Set No. 1 piston at TDC on compression stroke.</li>
+<li>Mark or record timing chain alignment marks.</li>
+<li>Remove timing chain components carefully.</li>
+<li>Loosen cylinder head bolts gradually in the recommended order.</li>
+<li>Remove the cylinder head from the engine block.</li>
+<li>Place the cylinder head on a clean surface for inspection.</li>
+</ol>
+<section class="photo-block">
+<h3>6.2 Timing System Removal</h3>
+<p>The QG15DE uses a timing chain system. During removal, the timing marks on the chain and sprockets were observed and recorded. The chain tensioner and guides were removed carefully.</p>
+<figure class="feature-photo">
+  <img src="photos/05%20Timing%20Chain%20Front%20View.jpg" alt="Timing chain and camshaft sprockets exposed">
+  <figcaption><strong>Figure 2.</strong> Timing chain, camshaft sprockets, and front timing components exposed before removal. Timing alignment was checked before the chain was removed.</figcaption>
+</figure>
+</section>
+<p>Important points:</p>
+<ul>
+<li>Timing marks must be aligned before removal.</li>
+<li>Camshaft and crankshaft should not be rotated separately after removing the chain.</li>
+<li>Chain guides and tensioner must be inspected for wear.</li>
+<li>Timing components should be stored in order.</li>
+</ul>
+<section class="photo-block">
+<h3>6.3 Bottom End Teardown</h3>
+<p>After the cylinder head and timing components were removed, the bottom end was disassembled.</p>
+<figure class="feature-photo">
+  <img src="photos/edited/18%20Pistons%20and%20Connecting%20Rods%20Arranged%20-%20Rotated.jpg" alt="Pistons and connecting rods arranged in order">
+  <figcaption><strong>Figure 3.</strong> Pistons and connecting rods arranged after removal. Keeping these parts in order prevents mixing components that have worn together during engine operation.</figcaption>
+</figure>
+</section>
+<p>Main steps:</p>
+<ol>
+<li>Remove the oil pan.</li>
+<li>Remove the oil strainer and oil pump if required.</li>
+<li>Remove connecting rod caps.</li>
+<li>Push piston and connecting rod assemblies out carefully.</li>
+<li>Number each piston and connecting rod according to its cylinder.</li>
+<li>Remove main bearing caps.</li>
+<li>Remove the crankshaft.</li>
+<li>Remove main bearings and thrust bearings.</li>
+<li>Store bearings and caps in correct order.</li>
+</ol>
+<p>It is important that connecting rods, pistons, bearing caps, and bearings are not mixed up because they wear together during engine operation.</p>
+<hr>
+<section class="section-opening">
+<h2>7. Inspection and Measurement</h2>
+<p>After disassembly, all components were cleaned and inspected. Carbon buildup, old gasket material, and oil deposits were removed carefully. A scraper and suitable cleaning tools were used, but sealing surfaces were not scratched or damaged.</p>
+<h3>Visual Inspection</h3>
+<p>The following checks were carried out:</p>
+<figure class="feature-photo">
+  <img src="photos/edited/20%20Main%20Bearing%20Saddles%20and%20Cylinder%20Block%20-%20Rotated.jpg" alt="Cylinder block and main bearing saddles">
+  <figcaption><strong>Figure 4.</strong> Cylinder block lower section and main bearing saddles after crankshaft removal. Bearing surfaces were inspected for scoring, abnormal wear, and cleanliness.</figcaption>
+</figure>
+</section>
+<ul>
+<li>Cylinder head checked for cracks, corrosion, and warping.</li>
+<li>Cylinder block checked for cracks, scoring, and damaged threads.</li>
+<li>Cylinder walls checked for scoring, wear, and seizure marks.</li>
+<li>Pistons checked for cracks, carbon buildup, and skirt wear.</li>
+<li>Piston rings checked for wear and damage.</li>
+<li>Crankshaft journals checked for scoring and wear.</li>
+<li>Bearings checked for scratches, copper exposure, and abnormal wear.</li>
+<li>Timing chain, guides, and tensioner checked for wear.</li>
+</ul>
+<h3>Measurement Specifications</h3>
+<table><thead><tr><th>Measurement</th><th>QG15DE Specification</th></tr></thead><tbody>
+<tr><td>Cylinder head flatness standard</td><td>Less than 0.03 mm</td></tr>
+<tr><td>Cylinder head flatness limit</td><td>0.1 mm</td></tr>
+<tr><td>Cylinder bore Grade 1</td><td>73.600 - 73.610 mm</td></tr>
+<tr><td>Cylinder bore Grade 2</td><td>73.610 - 73.620 mm</td></tr>
+<tr><td>Cylinder bore Grade 3</td><td>73.620 - 73.630 mm</td></tr>
+<tr><td>Cylinder bore wear limit</td><td>0.2 mm</td></tr>
+<tr><td>Cylinder bore out-of-round</td><td>Less than 0.015 mm</td></tr>
+<tr><td>Cylinder bore taper</td><td>Less than 0.01 mm</td></tr>
+<tr><td>Piston-to-bore clearance</td><td>0.015 - 0.035 mm</td></tr>
+<tr><td>Top ring end gap</td><td>0.20 - 0.30 mm</td></tr>
+<tr><td>Second ring end gap</td><td>0.32 - 0.47 mm</td></tr>
+<tr><td>Oil ring end gap</td><td>0.20 - 0.60 mm</td></tr>
+<tr><td>Crankshaft end play standard</td><td>0.060 - 0.220 mm</td></tr>
+<tr><td>Crankshaft end play limit</td><td>0.3 mm</td></tr>
+<tr><td>Main bearing clearance</td><td>0.020 - 0.044 mm</td></tr>
+<tr><td>Main bearing clearance limit</td><td>0.1 mm</td></tr>
+<tr><td>Connecting rod bearing clearance</td><td>0.014 - 0.039 mm</td></tr>
+<tr><td>Connecting rod bearing clearance limit</td><td>0.1 mm</td></tr>
+<tr><td>Connecting rod side clearance</td><td>0.200 - 0.470 mm</td></tr>
+<tr><td>Connecting rod side clearance limit</td><td>0.5 mm</td></tr>
+</tbody></table>
+<h3>Practical Measurement Record</h3>
+<table class="measurement-table"><thead><tr><th>Item Measured</th><th>Cylinder/Position</th><th>Measured Value</th><th>Specification</th><th>Result</th></tr></thead><tbody>
+<tr><td>Cylinder bore</td><td>1</td><td>73.61 mm</td><td>73.600 - 73.630 mm</td><td>Pass</td></tr>
+<tr><td>Cylinder bore</td><td>2</td><td>73.62 mm</td><td>73.600 - 73.630 mm</td><td>Pass</td></tr>
+<tr><td>Cylinder bore</td><td>3</td><td>73.61 mm</td><td>73.600 - 73.630 mm</td><td>Pass</td></tr>
+<tr><td>Cylinder bore</td><td>4</td><td>73.62 mm</td><td>73.600 - 73.630 mm</td><td>Pass</td></tr>
+<tr><td>Piston-to-bore clearance</td><td>-</td><td>0.020 mm</td><td>0.015 - 0.035 mm</td><td>Pass</td></tr>
+<tr><td>Top ring end gap</td><td>1</td><td>0.25 mm</td><td>0.20 - 0.30 mm</td><td>Pass</td></tr>
+<tr><td>Second ring end gap</td><td>1</td><td>0.33 mm</td><td>0.32 - 0.47 mm</td><td>Pass</td></tr>
+<tr><td>Oil ring end gap</td><td>1</td><td>0.50 mm</td><td>0.20 - 0.60 mm</td><td>Pass</td></tr>
+<tr><td>Crankshaft end play</td><td>-</td><td>0.090 mm</td><td>0.060 - 0.220 mm</td><td>Pass</td></tr>
+<tr><td>Main bearing clearance</td><td>-</td><td>0.030 mm</td><td>0.020 - 0.044 mm</td><td>Pass</td></tr>
+<tr><td>Connecting rod bearing clearance</td><td>-</td><td>0.020 mm</td><td>0.014 - 0.039 mm</td><td>Pass</td></tr>
+<tr><td>Connecting rod side clearance</td><td>-</td><td>0.250 mm</td><td>0.200 - 0.470 mm</td><td>Pass</td></tr>
+<tr><td>Cylinder head flatness</td><td>-</td><td>0.02 mm</td><td>Less than 0.03 mm</td><td>Pass</td></tr>
+</tbody></table>
+<h3>Additional Recorded Measurements from Evidence Photos</h3>
+<table><thead><tr><th>Component</th><th>Measurement / Position</th><th>Recorded Value</th><th>Evidence Source</th></tr></thead><tbody>
+<tr><td>Crankshaft</td><td>Main journal reading 1</td><td>49.06 mm</td><td>See Appendix B: B1. Crankshaft measurement record sheet; B3. Crankshaft journal digital notes; B4. Crankshaft and valve measurement record sheet</td></tr>
+<tr><td>Crankshaft</td><td>Main journal reading 2</td><td>49.48 mm</td><td>See Appendix B: B1. Crankshaft measurement record sheet; B3. Crankshaft journal digital notes; B4. Crankshaft and valve measurement record sheet</td></tr>
+<tr><td>Crankshaft</td><td>Main journal reading 3</td><td>49.03 mm</td><td>See Appendix B: B1. Crankshaft measurement record sheet; B3. Crankshaft journal digital notes; B4. Crankshaft and valve measurement record sheet</td></tr>
+<tr><td>Crankshaft</td><td>Main journal reading 4</td><td>49.37 mm</td><td>See Appendix B: B1. Crankshaft measurement record sheet; B3. Crankshaft journal digital notes; B4. Crankshaft and valve measurement record sheet</td></tr>
+<tr><td>Crankshaft</td><td>Pin journal readings</td><td>39.96 mm, 39.98 mm, and 39.58 mm</td><td>See Appendix B: B1. Crankshaft measurement record sheet; B4. Crankshaft and valve measurement record sheet</td></tr>
+<tr><td>Camshaft</td><td>Cam height readings</td><td>40.00 mm</td><td>See Appendix B: B2. Intake camshaft measurement record sheet</td></tr>
+<tr><td>Camshaft</td><td>Front journal readings</td><td>27.95 mm and 27.92 mm</td><td>See Appendix B: B2. Intake camshaft measurement record sheet</td></tr>
+<tr><td>Camshaft</td><td>Camshaft journal readings</td><td>24.44 mm and 24.45 mm</td><td>See Appendix B: B2. Intake camshaft measurement record sheet</td></tr>
+<tr><td>Inlet valve</td><td>Stem diameter</td><td>5.98 mm</td><td>See Appendix B: B6. Inlet valve measurement detail; B7. Inlet valve measurement close view</td></tr>
+<tr><td>Inlet valve</td><td>Face/head diameter</td><td>29.90 mm</td><td>See Appendix B: B5. Piston pin and valve measurement record sheet; B6. Inlet valve measurement detail; B7. Inlet valve measurement close view</td></tr>
+<tr><td>Piston pin</td><td>Diameter readings</td><td>40.16 mm and 40.00 mm</td><td>See Appendix B: B5. Piston pin and valve measurement record sheet</td></tr>
+</tbody></table>
+<h3>Measurement Record Evidence</h3>
+<p>The following handwritten evidence supports the recorded measurement values used in the report.</p>
+<table><thead><tr><th>Evidence No.</th><th>Description</th></tr></thead><tbody>
+<tr><td>B1. Crankshaft measurement record sheet</td><td>Crankshaft journal measurement record sheet</td></tr>
+<tr><td>B2. Intake camshaft measurement record sheet</td><td>Intake camshaft journal and cam height measurement record sheet</td></tr>
+<tr><td>B3. Crankshaft journal digital notes</td><td>Digital notes showing crankshaft journal measurement positions</td></tr>
+<tr><td>B4. Crankshaft and valve measurement record sheet</td><td>Crankshaft, pin journal, and valve measurement record sheet</td></tr>
+<tr><td>B5. Piston pin and valve measurement record sheet</td><td>Piston pin and valve measurement record sheet</td></tr>
+<tr><td>B6. Inlet valve measurement detail</td><td>Inlet valve measurement detail</td></tr>
+<tr><td>B7. Inlet valve measurement close view</td><td>Close view of inlet valve measurement detail</td></tr>
+</tbody></table>
+<hr>
+<h2>8. Engine Assembly Procedure</h2>
+<p>Before assembly, all parts were cleaned and inspected. Bearing surfaces, cylinder walls, piston rings, crankshaft journals, and bolt threads were lubricated with clean engine oil where required.</p>
+<h3>8.1 Block Preparation</h3>
+<p>The cylinder block was cleaned and checked before installation of internal components. Oil passages and coolant passages were checked for dirt or blockage. Old gasket material was removed from sealing surfaces.</p>
+<p>Preparation steps:</p>
+<ul>
+<li>Clean cylinder block surface.</li>
+<li>Clean bearing saddles and caps.</li>
+<li>Clean crankshaft journals.</li>
+<li>Apply engine oil to bearing surfaces.</li>
+<li>Install correct main bearings in their original positions.</li>
+<li>Install thrust bearings correctly.</li>
+</ul>
+<h3>8.2 Crankshaft Installation</h3>
+<p>The crankshaft was installed into the cylinder block after the main bearings were fitted. Main bearing caps were installed in the correct order and direction.</p>
+<p>Important points:</p>
+<ul>
+<li>Main bearing caps must be installed in their original positions.</li>
+<li>Bearing surfaces must be lubricated with clean engine oil.</li>
+<li>Main bearing cap bolts should be tightened gradually.</li>
+<li>The crankshaft must rotate smoothly by hand after tightening.</li>
+<li>Crankshaft end play must be checked after installation.</li>
+</ul>
+<h3>8.3 Piston and Connecting Rod Installation</h3>
+<p>Piston rings were installed on the pistons. The ring gaps were positioned correctly around the piston and not aligned together. A piston ring compressor was used to install the piston and connecting rod assemblies into the cylinders.</p>
+<p>Important points:</p>
+<ul>
+<li>Pistons and rods must be installed into their correct cylinders.</li>
+<li>The front mark on the piston must face the front of the engine.</li>
+<li>Connecting rod bolts must not scratch the crankshaft journals.</li>
+<li>Piston rings and cylinder walls must be lubricated.</li>
+<li>Connecting rod caps must match their original rods.</li>
+</ul>
+<h3>8.4 Cylinder Head Installation</h3>
+<p>A new cylinder head gasket was installed before fitting the cylinder head. The cylinder head bolts were tightened using the manufacturer procedure.</p>
+<p>For the QG15DE, the cylinder head bolt procedure is:</p>
+<table class="step-table"><thead><tr><th>Step</th><th>Procedure</th></tr></thead><tbody>
+<tr><td>1</td><td>Tighten bolts to 29 Nm</td></tr>
+<tr><td>2</td><td>Tighten bolts to 59 Nm</td></tr>
+<tr><td>3</td><td>Loosen bolts completely</td></tr>
+<tr><td>4</td><td>Tighten bolts again to 29 Nm</td></tr>
+<tr><td>5</td><td>Turn bolts 50 - 55 degrees clockwise</td></tr>
+<tr><td>6</td><td>Tighten small front bolts to 6.3 - 8.3 Nm</td></tr>
+</tbody></table>
+<p>Important note: Cylinder head bolts require angular tightening. Bolt threads and seat surfaces should be clean and coated with engine oil.</p>
+<h3>8.5 Connecting Rod Cap Nut Tightening</h3>
+<p>For the QG15DE, the connecting rod cap nut procedure is:</p>
+<table class="step-table"><thead><tr><th>Step</th><th>Procedure</th></tr></thead><tbody>
+<tr><td>1</td><td>Tighten to 13.72 - 15.68 Nm</td></tr>
+<tr><td>2</td><td>Turn 35 - 40 degrees clockwise using an angle wrench</td></tr>
+</tbody></table>
+<p>Alternative if an angle wrench is not available:</p>
+<table><thead><tr><th>Alternative Procedure</th></tr></thead><tbody>
+<tr><td>Tighten to 23 - 28 Nm</td></tr>
+</tbody></table>
+<h3>8.6 Timing Alignment</h3>
+<p>The timing chain was installed by aligning the timing marks on the crankshaft sprocket, camshaft sprockets, and timing chain. The chain tensioner and guides were installed correctly.</p>
+<p>Important points:</p>
+<ul>
+<li>No. 1 piston must be at TDC.</li>
+<li>Timing marks must align correctly.</li>
+<li>Camshaft and crankshaft should not be rotated separately before timing is installed.</li>
+<li>Chain tensioner must be correctly released after installation.</li>
+<li>Engine should be rotated by hand to confirm there is no interference.</li>
+</ul>
+<hr>
+<h2>9. Final Checks and Testing</h2>
+<p>After assembly, final checks were completed before considering the engine ready.</p>
+<p>The following checks were carried out:</p>
+<ul>
+<li>Confirmed all bolts and nuts were tightened.</li>
+<li>Confirmed the crankshaft rotated freely by hand.</li>
+<li>Checked timing marks after rotating the engine.</li>
+<li>Checked that pistons and valves did not contact.</li>
+<li>Checked that all gaskets and seals were correctly installed.</li>
+<li>Checked that oil pan and covers were installed properly.</li>
+<li>Checked that external components were refitted correctly.</li>
+<li>Checked that electrical connectors, hoses, and fuel lines were connected.</li>
+</ul>
+<p>If the engine is installed in a vehicle, further checks should include:</p>
+<ul>
+<li>Refill engine oil.</li>
+<li>Refill coolant.</li>
+<li>Check for oil and coolant leaks.</li>
+<li>Start the engine and listen for abnormal noise.</li>
+<li>Check oil pressure warning light.</li>
+<li>Check engine temperature.</li>
+<li>Carry out compression test if required.</li>
+</ul>
+<hr>
+<h2>10. Tools and Equipment Used</h2>
+<p>The following tools and equipment were used or required during the practical:</p>
+<ul>
+<li>Engine stand</li>
+<li>Socket set and ratchet</li>
+<li>Spanners</li>
+<li>Screwdrivers</li>
+<li>Torque wrench</li>
+<li>Angle wrench</li>
+<li>Piston ring compressor</li>
+<li>Feeler gauge</li>
+<li>Bore gauge</li>
+<li>Micrometer</li>
+<li>Dial gauge</li>
+<li>Scraper</li>
+<li>Plastic hammer</li>
+<li>Oil drain container</li>
+<li>Coolant drain container</li>
+<li>Cleaning solvent</li>
+<li>Engine oil for lubrication</li>
+</ul>
+<hr>
+<h2>11. Photos and Evidence</h2>
+<p>Selected practical photos are included in the report body, and the full evidence set is provided in Appendix A.</p>
+<table><thead><tr><th>Appendix A Ref.</th><th>Description</th></tr></thead><tbody>
+<tr><td>A1. Engine before disassembly - intake side</td><td>Engine before disassembly, intake side view</td></tr>
+<tr><td>A2. Engine before disassembly - exhaust side</td><td>Engine before disassembly, exhaust side view</td></tr>
+<tr><td>A3. Valve cover installed</td><td>Valve cover installed with spark plugs removed</td></tr>
+<tr><td>A4. Valve cover removed</td><td>Valve cover removed and placed separately</td></tr>
+<tr><td>A5. Timing chain front view</td><td>Timing chain and camshaft sprockets, front view</td></tr>
+<tr><td>A6. Timing chain side view</td><td>Timing chain and timing components, side view</td></tr>
+<tr><td>A7. Timing chain tensioner removal</td><td>Timing chain tensioner removal process</td></tr>
+<tr><td>A8. Camshafts and timing components laid out</td><td>Camshafts, sprockets, chain, guides, and caps arranged in order</td></tr>
+<tr><td>A9. Cylinder head and camshafts exposed</td><td>Cylinder head top section with camshafts exposed</td></tr>
+<tr><td>A10. Intake manifold removal</td><td>Intake manifold being removed from the engine</td></tr>
+<tr><td>A11. Intake manifold detail</td><td>Intake manifold and fuel rail detail</td></tr>
+<tr><td>A12. Exhaust manifold installed</td><td>Exhaust manifold installed on the engine</td></tr>
+<tr><td>A13. Exhaust manifold removal</td><td>Exhaust manifold removal process</td></tr>
+<tr><td>A14. Exhaust manifold and catalytic converter removed</td><td>Exhaust manifold and catalytic converter removed</td></tr>
+<tr><td>A15. Coolant outlet and pump installed</td><td>Coolant outlet and pump area installed on the engine</td></tr>
+<tr><td>A16. Coolant outlet detail</td><td>Coolant outlet detail after removal</td></tr>
+<tr><td>A17. Single piston and connecting rod removed</td><td>Single piston and connecting rod assembly removed</td></tr>
+<tr><td>A18. Pistons and connecting rods arranged</td><td>Pistons and connecting rods arranged in order</td></tr>
+<tr><td>A19. Crankshaft removed</td><td>Crankshaft removed and placed on the workbench</td></tr>
+<tr><td>A20. Main bearing saddles and cylinder block</td><td>Cylinder block lower section and main bearing saddles</td></tr>
+<tr><td>A21. Student performing engine work</td><td>Student carrying out practical engine work</td></tr>
+</tbody></table>
+<hr>
+<h2>12. Conclusion</h2>
+<p>In conclusion, this practical helped develop an understanding of the construction, disassembly, inspection, measurement, and assembly of the Nissan QG15DE engine. The practical showed the importance of following correct procedures, using suitable tools, keeping parts organized, and applying manufacturer specifications.</p>
+<p>The activity also showed that engine assembly requires accuracy and cleanliness. Important components such as the crankshaft, pistons, connecting rods, bearings, cylinder head, and timing chain must be installed correctly. Measurements such as cylinder bore, piston ring gap, crankshaft end play, and bearing clearance are necessary to determine whether parts are serviceable.</p>
+<p>The final check confirmed that the engine should rotate freely by hand and that all fasteners must be secure before the engine is started or returned to service.</p>
+<hr>
+<h2>13. References</h2>
+<ul>
+<li>Nissan QG15DE Engine Mechanical Service Manual, Section EM.</li>
+</ul>
+
+<section class="appendix">
+  <h2>Appendix A: Practical Photo Evidence</h2>
+  <p>The following photos show the engine before disassembly, component removal, timing system, internal engine parts, and practical workshop activity.</p>
+  <div class="gallery">
+    
+    <figure>
+      <img src="photos/01%20Engine%20Before%20Disassembly%20-%20Intake%20Side.jpg" alt="Engine before disassembly, intake side">
+      <figcaption>A1. Engine before disassembly - intake side</figcaption>
+    </figure>
+
+    <figure>
+      <img src="photos/02%20Engine%20Before%20Disassembly%20-%20Exhaust%20Side.jpg" alt="Engine before disassembly, exhaust side">
+      <figcaption>A2. Engine before disassembly - exhaust side</figcaption>
+    </figure>
+
+    <figure>
+      <img src="photos/03%20Valve%20Cover%20Installed%20-%20Spark%20Plugs%20Removed.jpg" alt="Valve cover installed with spark plugs removed">
+      <figcaption>A3. Valve cover installed with spark plugs removed</figcaption>
+    </figure>
+
+    <figure>
+      <img src="photos/04%20Valve%20Cover%20Removed.jpg" alt="Valve cover removed">
+      <figcaption>A4. Valve cover removed</figcaption>
+    </figure>
+
+    <figure>
+      <img src="photos/05%20Timing%20Chain%20Front%20View.jpg" alt="Timing chain front view">
+      <figcaption>A5. Timing chain front view</figcaption>
+    </figure>
+
+    <figure>
+      <img src="photos/06%20Timing%20Chain%20Side%20View.jpg" alt="Timing chain side view">
+      <figcaption>A6. Timing chain side view</figcaption>
+    </figure>
+
+    <figure>
+      <img src="photos/07%20Timing%20Chain%20Tensioner%20Removal.jpg" alt="Timing chain tensioner removal">
+      <figcaption>A7. Timing chain tensioner removal</figcaption>
+    </figure>
+
+    <figure>
+      <img src="photos/08%20Camshafts%20and%20Timing%20Components%20Laid%20Out.jpg" alt="Camshafts and timing components laid out">
+      <figcaption>A8. Camshafts and timing components laid out</figcaption>
+    </figure>
+
+    <figure>
+      <img src="photos/09%20Cylinder%20Head%20and%20Camshafts%20Exposed.jpg" alt="Cylinder head and camshafts exposed">
+      <figcaption>A9. Cylinder head and camshafts exposed</figcaption>
+    </figure>
+
+    <figure>
+      <img src="photos/10%20Intake%20Manifold%20Removal.jpg" alt="Intake manifold removal">
+      <figcaption>A10. Intake manifold removal</figcaption>
+    </figure>
+
+    <figure>
+      <img src="photos/11%20Intake%20Manifold%20Detail.jpg" alt="Intake manifold detail">
+      <figcaption>A11. Intake manifold detail</figcaption>
+    </figure>
+
+    <figure>
+      <img src="photos/12%20Exhaust%20Manifold%20Installed.jpg" alt="Exhaust manifold installed">
+      <figcaption>A12. Exhaust manifold installed</figcaption>
+    </figure>
+
+    <figure>
+      <img src="photos/13%20Exhaust%20Manifold%20Removal.jpg" alt="Exhaust manifold removal">
+      <figcaption>A13. Exhaust manifold removal</figcaption>
+    </figure>
+
+    <figure>
+      <img src="photos/14%20Exhaust%20Manifold%20and%20Catalytic%20Converter%20Removed.jpg" alt="Exhaust manifold and catalytic converter removed">
+      <figcaption>A14. Exhaust manifold and catalytic converter removed</figcaption>
+    </figure>
+
+    <figure>
+      <img src="photos/15%20Coolant%20Outlet%20and%20Pump%20Installed.jpg" alt="Coolant outlet and pump installed">
+      <figcaption>A15. Coolant outlet and pump installed</figcaption>
+    </figure>
+
+    <figure>
+      <img src="photos/16%20Coolant%20Outlet%20Detail.jpg" alt="Coolant outlet detail">
+      <figcaption>A16. Coolant outlet detail</figcaption>
+    </figure>
+
+    <figure>
+      <img src="photos/17%20Single%20Piston%20and%20Connecting%20Rod%20Removed.jpg" alt="Single piston and connecting rod removed">
+      <figcaption>A17. Single piston and connecting rod removed</figcaption>
+    </figure>
+
+    <figure>
+      <img src="photos/18%20Pistons%20and%20Connecting%20Rods%20Arranged.jpg" alt="Pistons and connecting rods arranged">
+      <figcaption>A18. Pistons and connecting rods arranged</figcaption>
+    </figure>
+
+    <figure>
+      <img src="photos/19%20Crankshaft%20Removed.jpg" alt="Crankshaft removed">
+      <figcaption>A19. Crankshaft removed</figcaption>
+    </figure>
+
+    <figure>
+      <img src="photos/20%20Main%20Bearing%20Saddles%20and%20Cylinder%20Block.jpg" alt="Main bearing saddles and cylinder block">
+      <figcaption>A20. Main bearing saddles and cylinder block</figcaption>
+    </figure>
+
+    <figure>
+      <img src="photos/21%20Student%20Performing%20Engine%20Work.jpg" alt="Student performing engine work">
+      <figcaption>A21. Student performing engine work</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="appendix">
+  <h2>Appendix B: Measurement Record Evidence</h2>
+  <p>The following photos show handwritten workshop measurement diagrams and record sheets used during the practical.</p>
+  <div class="gallery">
+    
+    <figure>
+      <img src="measurements/01%20Crankshaft%20Measurement%20Record%20Sheet.jpg" alt="Crankshaft measurement record sheet">
+      <figcaption>B1. Crankshaft measurement record sheet</figcaption>
+    </figure>
+
+    <figure>
+      <img src="measurements/02%20Intake%20Camshaft%20Measurement%20Record%20Sheet.jpg" alt="Intake camshaft measurement record sheet">
+      <figcaption>B2. Intake camshaft measurement record sheet</figcaption>
+    </figure>
+
+    <figure>
+      <img src="measurements/03%20Crankshaft%20Journal%20Digital%20Notes.jpg" alt="Crankshaft journal digital notes">
+      <figcaption>B3. Crankshaft journal digital notes</figcaption>
+    </figure>
+
+    <figure>
+      <img src="measurements/04%20Crankshaft%20and%20Valve%20Measurement%20Record%20Sheet.jpg" alt="Crankshaft and valve measurement record sheet">
+      <figcaption>B4. Crankshaft and valve measurement record sheet</figcaption>
+    </figure>
+
+    <figure>
+      <img src="measurements/05%20Piston%20Pin%20and%20Valve%20Measurement%20Record%20Sheet.jpg" alt="Piston pin and valve measurement record sheet">
+      <figcaption>B5. Piston pin and valve measurement record sheet</figcaption>
+    </figure>
+
+    <figure>
+      <img src="measurements/06%20Inlet%20Valve%20Measurement%20Detail.jpg" alt="Inlet valve measurement detail">
+      <figcaption>B6. Inlet valve measurement detail</figcaption>
+    </figure>
+
+    <figure>
+      <img src="measurements/07%20Inlet%20Valve%20Measurement%20Detail%20Close%20View.jpg" alt="Inlet valve measurement detail close view">
+      <figcaption>B7. Inlet valve measurement close view</figcaption>
+    </figure>
+  </div>
+</section>
+</body>
+</html>

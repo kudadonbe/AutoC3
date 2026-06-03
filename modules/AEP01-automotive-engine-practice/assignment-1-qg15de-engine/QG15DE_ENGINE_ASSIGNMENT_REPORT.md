@@ -26,7 +26,7 @@
 
 **Engine Used:** Nissan QG15DE
 
-**Date:** _______________________________
+**Date:** 21 April 2026
 
 ---
 
@@ -78,8 +78,8 @@ Additional details from the practical engine:
 |---|---|
 | Make | Nissan |
 | Model | QG15DE |
-| Year | _______________________________ |
-| Serial number | _______________________________ |
+| Year | 1999 |
+| Serial number | Not confirmed - to be checked from engine block stamping if visible |
 | Vehicle/model source | _______________________________ |
 
 ---
@@ -263,6 +263,20 @@ Note: The original practical photos and exact measurement records were not avail
 | Connecting rod bearing clearance | - | 0.026 mm | 0.014 - 0.039 mm | Pass |
 | Cylinder head flatness | - | 0.02 mm | Less than 0.03 mm | Pass |
 
+### Measurement Record Evidence
+
+Additional measurement record photos are stored in the `measurements/` folder. These photos show handwritten workshop diagrams and notes used during the practical measurement discussion.
+
+| Evidence No. | File Name | Description |
+|---:|---|---|
+| M1 | `01 Crankshaft Measurement Record Sheet.jpg` | Crankshaft journal measurement record sheet |
+| M2 | `02 Intake Camshaft Measurement Record Sheet.jpg` | Intake camshaft journal and cam height measurement record sheet |
+| M3 | `03 Crankshaft Journal Digital Notes.jpg` | Digital notes showing crankshaft journal measurement positions |
+| M4 | `04 Crankshaft and Valve Measurement Record Sheet.jpg` | Crankshaft, pin journal, and valve measurement record sheet |
+| M5 | `05 Piston Pin and Valve Measurement Record Sheet.jpg` | Piston pin and valve measurement record sheet |
+| M6 | `06 Inlet Valve Measurement Detail.jpg` | Inlet valve measurement detail |
+| M7 | `07 Inlet Valve Measurement Detail Close View.jpg` | Close view of inlet valve measurement detail |
+
 ---
 
 ## 8. Engine Assembly Procedure
@@ -405,22 +419,31 @@ The following tools and equipment were used or required during the practical:
 
 ## 11. Photos and Evidence
 
-Attach practical photos in this section.
+Practical photos are stored in the `photos/` folder for this assignment.
 
-Note: Practical photos were taken during the activity, but they were stored in WhatsApp and were not accessible during report preparation because the phone screen was damaged. The photo list below identifies the evidence that should be attached if the WhatsApp media can be recovered.
-
-| Photo No. | Description |
-|---|---|
-| 1 | Engine before disassembly |
-| 2 | External components removed |
-| 3 | Valve cover removed |
-| 4 | Timing chain and timing marks |
-| 5 | Cylinder head removed |
-| 6 | Pistons and connecting rods removed |
-| 7 | Crankshaft and main bearings |
-| 8 | Measurement process |
-| 9 | Engine during assembly |
-| 10 | Final assembled engine |
+| Photo No. | File Name | Description |
+|---:|---|---|
+| 1 | `01 Engine Before Disassembly - Intake Side.jpg` | Engine before disassembly, intake side view |
+| 2 | `02 Engine Before Disassembly - Exhaust Side.jpg` | Engine before disassembly, exhaust side view |
+| 3 | `03 Valve Cover Installed - Spark Plugs Removed.jpg` | Valve cover installed with spark plugs removed |
+| 4 | `04 Valve Cover Removed.jpg` | Valve cover removed and placed separately |
+| 5 | `05 Timing Chain Front View.jpg` | Timing chain and camshaft sprockets, front view |
+| 6 | `06 Timing Chain Side View.jpg` | Timing chain and timing components, side view |
+| 7 | `07 Timing Chain Tensioner Removal.jpg` | Timing chain tensioner removal process |
+| 8 | `08 Camshafts and Timing Components Laid Out.jpg` | Camshafts, sprockets, chain, guides, and caps arranged in order |
+| 9 | `09 Cylinder Head and Camshafts Exposed.jpg` | Cylinder head top section with camshafts exposed |
+| 10 | `10 Intake Manifold Removal.jpg` | Intake manifold being removed from the engine |
+| 11 | `11 Intake Manifold Detail.jpg` | Intake manifold and fuel rail detail |
+| 12 | `12 Exhaust Manifold Installed.jpg` | Exhaust manifold installed on the engine |
+| 13 | `13 Exhaust Manifold Removal.jpg` | Exhaust manifold removal process |
+| 14 | `14 Exhaust Manifold and Catalytic Converter Removed.jpg` | Exhaust manifold and catalytic converter removed |
+| 15 | `15 Coolant Outlet and Pump Installed.jpg` | Coolant outlet and pump area installed on the engine |
+| 16 | `16 Coolant Outlet Detail.jpg` | Coolant outlet detail after removal |
+| 17 | `17 Single Piston and Connecting Rod Removed.jpg` | Single piston and connecting rod assembly removed |
+| 18 | `18 Pistons and Connecting Rods Arranged.jpg` | Pistons and connecting rods arranged in order |
+| 19 | `19 Crankshaft Removed.jpg` | Crankshaft removed and placed on the workbench |
+| 20 | `20 Main Bearing Saddles and Cylinder Block.jpg` | Cylinder block lower section and main bearing saddles |
+| 21 | `21 Student Performing Engine Work.jpg` | Student carrying out practical engine work |
 
 ---
 
