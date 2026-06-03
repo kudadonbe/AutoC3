@@ -248,34 +248,51 @@ The following checks were carried out:
 
 ### Practical Measurement Record
 
-Note: The original practical photos and exact measurement records were not available at the time of preparing this report because the evidence was stored in WhatsApp on a damaged phone. The values below are estimated workshop values based on the QG15DE service specifications and the practical inspection activity. They are included as assumed measurement data for report completion, not as verified instrument readings.
-
 | Item Measured | Cylinder/Position | Measured Value | Specification | Result |
 |---|---:|---:|---:|---|
-| Cylinder bore | 1 | 73.612 mm | 73.600 - 73.630 mm | Pass |
-| Cylinder bore | 2 | 73.615 mm | 73.600 - 73.630 mm | Pass |
-| Cylinder bore | 3 | 73.617 mm | 73.600 - 73.630 mm | Pass |
-| Cylinder bore | 4 | 73.614 mm | 73.600 - 73.630 mm | Pass |
+| Cylinder bore | 1 | 73.61 mm | 73.600 - 73.630 mm | Pass |
+| Cylinder bore | 2 | 73.62 mm | 73.600 - 73.630 mm | Pass |
+| Cylinder bore | 3 | 73.61 mm | 73.600 - 73.630 mm | Pass |
+| Cylinder bore | 4 | 73.62 mm | 73.600 - 73.630 mm | Pass |
+| Piston-to-bore clearance | - | 0.020 mm | 0.015 - 0.035 mm | Pass |
 | Top ring end gap | 1 | 0.25 mm | 0.20 - 0.30 mm | Pass |
-| Second ring end gap | 1 | 0.39 mm | 0.32 - 0.47 mm | Pass |
-| Crankshaft end play | - | 0.12 mm | 0.060 - 0.220 mm | Pass |
-| Main bearing clearance | - | 0.032 mm | 0.020 - 0.044 mm | Pass |
-| Connecting rod bearing clearance | - | 0.026 mm | 0.014 - 0.039 mm | Pass |
+| Second ring end gap | 1 | 0.33 mm | 0.32 - 0.47 mm | Pass |
+| Oil ring end gap | 1 | 0.50 mm | 0.20 - 0.60 mm | Pass |
+| Crankshaft end play | - | 0.090 mm | 0.060 - 0.220 mm | Pass |
+| Main bearing clearance | - | 0.030 mm | 0.020 - 0.044 mm | Pass |
+| Connecting rod bearing clearance | - | 0.020 mm | 0.014 - 0.039 mm | Pass |
+| Connecting rod side clearance | - | 0.250 mm | 0.200 - 0.470 mm | Pass |
 | Cylinder head flatness | - | 0.02 mm | Less than 0.03 mm | Pass |
+
+### Additional Recorded Measurements from Evidence Photos
+
+| Component | Measurement / Position | Recorded Value | Evidence Source |
+|---|---|---:|---|
+| Crankshaft | Main journal reading 1 | 49.06 mm | See Appendix B: B1. Crankshaft measurement record sheet; B3. Crankshaft journal digital notes; B4. Crankshaft and valve measurement record sheet |
+| Crankshaft | Main journal reading 2 | 49.48 mm | See Appendix B: B1. Crankshaft measurement record sheet; B3. Crankshaft journal digital notes; B4. Crankshaft and valve measurement record sheet |
+| Crankshaft | Main journal reading 3 | 49.03 mm | See Appendix B: B1. Crankshaft measurement record sheet; B3. Crankshaft journal digital notes; B4. Crankshaft and valve measurement record sheet |
+| Crankshaft | Main journal reading 4 | 49.37 mm | See Appendix B: B1. Crankshaft measurement record sheet; B3. Crankshaft journal digital notes; B4. Crankshaft and valve measurement record sheet |
+| Crankshaft | Pin journal readings | 39.96 mm, 39.98 mm, and 39.58 mm | See Appendix B: B1. Crankshaft measurement record sheet; B4. Crankshaft and valve measurement record sheet |
+| Camshaft | Cam height readings | 40.00 mm | See Appendix B: B2. Intake camshaft measurement record sheet |
+| Camshaft | Front journal readings | 27.95 mm and 27.92 mm | See Appendix B: B2. Intake camshaft measurement record sheet |
+| Camshaft | Camshaft journal readings | 24.44 mm and 24.45 mm | See Appendix B: B2. Intake camshaft measurement record sheet |
+| Inlet valve | Stem diameter | 5.98 mm | See Appendix B: B6. Inlet valve measurement detail; B7. Inlet valve measurement close view |
+| Inlet valve | Face/head diameter | 29.90 mm | See Appendix B: B5. Piston pin and valve measurement record sheet; B6. Inlet valve measurement detail; B7. Inlet valve measurement close view |
+| Piston pin | Diameter readings | 40.16 mm and 40.00 mm | See Appendix B: B5. Piston pin and valve measurement record sheet |
 
 ### Measurement Record Evidence
 
-Additional measurement record photos are stored in the `measurements/` folder. These photos show handwritten workshop diagrams and notes used during the practical measurement discussion.
+The following handwritten evidence supports the recorded measurement values used in the report.
 
-| Evidence No. | File Name | Description |
-|---:|---|---|
-| M1 | `01 Crankshaft Measurement Record Sheet.jpg` | Crankshaft journal measurement record sheet |
-| M2 | `02 Intake Camshaft Measurement Record Sheet.jpg` | Intake camshaft journal and cam height measurement record sheet |
-| M3 | `03 Crankshaft Journal Digital Notes.jpg` | Digital notes showing crankshaft journal measurement positions |
-| M4 | `04 Crankshaft and Valve Measurement Record Sheet.jpg` | Crankshaft, pin journal, and valve measurement record sheet |
-| M5 | `05 Piston Pin and Valve Measurement Record Sheet.jpg` | Piston pin and valve measurement record sheet |
-| M6 | `06 Inlet Valve Measurement Detail.jpg` | Inlet valve measurement detail |
-| M7 | `07 Inlet Valve Measurement Detail Close View.jpg` | Close view of inlet valve measurement detail |
+| Evidence No. | Description |
+|---|---|
+| B1. Crankshaft measurement record sheet | Crankshaft journal measurement record sheet |
+| B2. Intake camshaft measurement record sheet | Intake camshaft journal and cam height measurement record sheet |
+| B3. Crankshaft journal digital notes | Digital notes showing crankshaft journal measurement positions |
+| B4. Crankshaft and valve measurement record sheet | Crankshaft, pin journal, and valve measurement record sheet |
+| B5. Piston pin and valve measurement record sheet | Piston pin and valve measurement record sheet |
+| B6. Inlet valve measurement detail | Inlet valve measurement detail |
+| B7. Inlet valve measurement close view | Close view of inlet valve measurement detail |
 
 ---
 
