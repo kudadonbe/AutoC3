@@ -20,6 +20,7 @@ This index lists the added course material by location.
 - `final-exam-prep/`
   - Combined AEP01, BWP01, and VMR01 final exam study guide
   - Combined practice questions
+  - Combined multiple choice paper
   - Last-day checklist
 
 ## Modules
