@@ -21,6 +21,7 @@ This index lists the added course material by location.
   - Combined AEP01, BWP01, and VMR01 final exam study guide
   - Combined practice questions
   - Combined multiple choice paper
+  - Source-verified questions and answers in BWP01, AEP01, VMR01 teaching order
   - Last-day checklist
 
 ## Modules

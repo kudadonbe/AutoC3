@@ -1,5 +1,10 @@
 # Final Exam Study Guide: AEP01, BWP01, VMR01
 
+> Source note: This older combined guide includes lecturer material,
+> QG15DE assignment/service-manual details, and summarized workshop knowledge.
+> For lecturer-PowerPoint-only teaching in the required BWP01, AEP01, VMR01
+> order, use `FINAL_EXAM_SOURCE_VERIFIED_QUESTIONS_AND_ANSWERS.md`.
+
 This guide covers the three final exam modules:
 
 - AEP01 - Automotive Engine Practice

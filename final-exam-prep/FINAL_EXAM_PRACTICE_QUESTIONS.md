@@ -1,5 +1,10 @@
 # Final Exam Practice Questions: AEP01, BWP01, VMR01
 
+> Source note: This older practice set includes lecturer material and
+> supplementary assignment/general workshop content. For lecturer-PowerPoint-
+> only questions in BWP01, AEP01, VMR01 order, use
+> `FINAL_EXAM_SOURCE_VERIFIED_QUESTIONS_AND_ANSWERS.md`.
+
 Try answering first, then check the answer.
 
 ## AEP01 Questions
