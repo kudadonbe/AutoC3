@@ -3,7 +3,7 @@
 > Source note: This older combined guide includes lecturer material,
 > QG15DE assignment/service-manual details, and summarized workshop knowledge.
 > For lecturer-PowerPoint-only teaching in the required BWP01, AEP01, VMR01
-> order, use `FINAL_EXAM_SOURCE_VERIFIED_QUESTIONS_AND_ANSWERS.md`.
+> order, use `Final Exam Source Verified Questions And Answers.md`.
 
 This guide covers the three final exam modules:
 
@@ -392,7 +392,8 @@ Taps and dies:
 
 Use the detailed VMR01 guide here:
 
-- `modules/VMR01-vehicle-maintenance-and-repair/final-exam-prep/VMR01_FINAL_EXAM_STUDY_GUIDE.md`
+- `VMR01 Chapter Notes QA.md` (all 16 chapters)
+- `VMR01 Exam Topics Answers.md` (exam-weighted systems)
 
 High-priority VMR01 topics:
 

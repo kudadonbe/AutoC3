@@ -1,0 +1,480 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BWP01 Test Paper - Basic Workshop Practice</title>
+  <style>
+    :root {
+      --ink: #1f2933;
+      --muted: #5c6773;
+      --line: #c9d1d9;
+      --soft: #f5f7fa;
+      --accent: #1f4e79;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: #eef2f6;
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.45;
+    }
+
+    .page {
+      width: min(980px, calc(100% - 24px));
+      margin: 24px auto;
+      padding: 32px;
+      background: #fff;
+      border: 1px solid var(--line);
+      box-shadow: 0 12px 32px rgba(31, 41, 51, 0.08);
+    }
+
+    h1,
+    h2,
+    h3 {
+      margin: 0;
+      line-height: 1.2;
+    }
+
+    h1 {
+      font-size: 28px;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0;
+    }
+
+    h2 {
+      margin-top: 28px;
+      padding: 10px 12px;
+      font-size: 18px;
+      color: #fff;
+      background: var(--accent);
+    }
+
+    h3 {
+      margin-top: 18px;
+      font-size: 16px;
+    }
+
+    p {
+      margin: 8px 0;
+    }
+
+    .meta {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px 24px;
+      margin: 22px 0;
+      font-size: 15px;
+    }
+
+    .line {
+      display: inline-block;
+      min-width: 260px;
+      border-bottom: 1px solid var(--ink);
+    }
+
+    .instructions {
+      margin: 16px 0 22px;
+      padding: 12px 16px;
+      background: var(--soft);
+      border-left: 4px solid var(--accent);
+    }
+
+    .marks {
+      float: right;
+      font-weight: 700;
+    }
+
+    ol {
+      padding-left: 24px;
+    }
+
+    li {
+      margin: 12px 0;
+    }
+
+    .answer-line {
+      display: block;
+      height: 28px;
+      margin-top: 6px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .short-lines .answer-line {
+      width: 100%;
+    }
+
+    .diagram-wrap {
+      margin: 16px auto;
+      padding: 14px;
+      border: 1px solid var(--line);
+      background: #fff;
+      text-align: center;
+    }
+
+    .diagram-wrap img {
+      max-width: min(100%, 520px);
+      height: auto;
+      border: 1px solid #d9dee5;
+    }
+
+    .label-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px 24px;
+      margin-top: 14px;
+    }
+
+    .label-item {
+      display: grid;
+      grid-template-columns: 34px 1fr;
+      align-items: end;
+      gap: 8px;
+      min-height: 30px;
+    }
+
+    .label-no {
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 12px 0;
+      font-size: 14px;
+    }
+
+    th,
+    td {
+      padding: 9px;
+      border: 1px solid var(--line);
+      vertical-align: top;
+    }
+
+    th {
+      background: var(--soft);
+      text-align: left;
+    }
+
+    .reading-table td:nth-child(2),
+    .reading-table td:nth-child(3),
+    .reading-table td:nth-child(4) {
+      width: 18%;
+    }
+
+    .function-table td {
+      height: 56px;
+    }
+
+    .note {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .answer-key {
+      page-break-before: always;
+    }
+
+    .answer-key h2 {
+      background: #365f2f;
+    }
+
+    @media print {
+      body {
+        background: #fff;
+      }
+
+      .page {
+        width: 100%;
+        margin: 0;
+        padding: 18mm;
+        border: 0;
+        box-shadow: none;
+      }
+
+      h2 {
+        break-after: avoid;
+      }
+
+      .diagram-wrap,
+      table,
+      li {
+        break-inside: avoid;
+      }
+
+      .diagram-wrap {
+        margin: 10px auto;
+        padding: 8px;
+      }
+
+      .diagram-wrap img {
+        max-width: 115mm;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <h1>BWP01 Basic Workshop Practice Test Paper</h1>
+
+    <div class="meta">
+      <div>Name: <span class="line"></span></div>
+      <div>Date: <span class="line"></span></div>
+      <div>Module: BWP01 Basic Workshop Practice</div>
+      <div>Total Marks: 104</div>
+      <div>Suggested Time: 90 minutes</div>
+      <div>Course: Certificate III in Automotive Repair and Maintenance</div>
+    </div>
+
+    <div class="instructions">
+      <strong>Instructions:</strong>
+      Answer all questions. Write clearly. Use correct workshop terms. For the
+      diagram question, label the drill-machine parts and explain the function
+      of each part.
+    </div>
+
+    <h2>Section A - Drill Machine <span class="marks">30 marks</span></h2>
+
+    <p><strong>1. Label the drill machine parts shown in the diagram.</strong> Write the correct part name for each number. <strong>(16 marks)</strong></p>
+
+    <div class="diagram-wrap">
+      <img src="Exam%20Diagram.png" alt="Unlabelled drill machine diagram for BWP01 test paper">
+      <p class="note">Use the callout lines in the diagram to identify the main drill-machine parts.</p>
+    </div>
+
+    <div class="label-grid">
+      <div class="label-item"><span class="label-no">1.</span><span class="answer-line"></span></div>
+      <div class="label-item"><span class="label-no">2.</span><span class="answer-line"></span></div>
+      <div class="label-item"><span class="label-no">3.</span><span class="answer-line"></span></div>
+      <div class="label-item"><span class="label-no">4.</span><span class="answer-line"></span></div>
+      <div class="label-item"><span class="label-no">5.</span><span class="answer-line"></span></div>
+      <div class="label-item"><span class="label-no">6.</span><span class="answer-line"></span></div>
+      <div class="label-item"><span class="label-no">7.</span><span class="answer-line"></span></div>
+      <div class="label-item"><span class="label-no">8.</span><span class="answer-line"></span></div>
+      <div class="label-item"><span class="label-no">9.</span><span class="answer-line"></span></div>
+      <div class="label-item"><span class="label-no">10.</span><span class="answer-line"></span></div>
+      <div class="label-item"><span class="label-no">11.</span><span class="answer-line"></span></div>
+      <div class="label-item"><span class="label-no">12.</span><span class="answer-line"></span></div>
+      <div class="label-item"><span class="label-no">13.</span><span class="answer-line"></span></div>
+      <div class="label-item"><span class="label-no">14.</span><span class="answer-line"></span></div>
+      <div class="label-item"><span class="label-no">15.</span><span class="answer-line"></span></div>
+      <div class="label-item"><span class="label-no">16.</span><span class="answer-line"></span></div>
+    </div>
+
+    <p><strong>2. Write the function of any six drill-machine parts.</strong> <strong>(12 marks)</strong></p>
+    <table class="function-table">
+      <thead>
+        <tr>
+          <th>Part</th>
+          <th>Function</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td></td><td></td></tr>
+        <tr><td></td><td></td></tr>
+        <tr><td></td><td></td></tr>
+        <tr><td></td><td></td></tr>
+        <tr><td></td><td></td></tr>
+        <tr><td></td><td></td></tr>
+      </tbody>
+    </table>
+
+    <p><strong>3. State three safety precautions when using a drilling machine.</strong> <strong>(6 marks)</strong></p>
+    <div class="short-lines">
+      <span class="answer-line"></span>
+      <span class="answer-line"></span>
+      <span class="answer-line"></span>
+    </div>
+
+    <h2>Section B - Vernier Caliper and Micrometer <span class="marks">20 marks</span></h2>
+
+    <p><strong>4. Name four parts of a Vernier caliper and state one use.</strong> <strong>(6 marks)</strong></p>
+    <div class="short-lines">
+      <span class="answer-line"></span>
+      <span class="answer-line"></span>
+      <span class="answer-line"></span>
+    </div>
+
+    <p><strong>5. Complete the Vernier caliper readings.</strong> <strong>(6 marks)</strong></p>
+    <table class="reading-table">
+      <thead>
+        <tr>
+          <th>Main scale reading</th>
+          <th>Matching Vernier division</th>
+          <th>Least count</th>
+          <th>Final reading</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>12 mm</td><td>5</td><td>0.02 mm</td><td></td></tr>
+        <tr><td>24 mm</td><td>8</td><td>0.02 mm</td><td></td></tr>
+        <tr><td>36 mm</td><td>3</td><td>0.02 mm</td><td></td></tr>
+      </tbody>
+    </table>
+
+    <p><strong>6. Name four parts of a micrometer and complete the readings.</strong> <strong>(8 marks)</strong></p>
+    <table class="reading-table">
+      <thead>
+        <tr>
+          <th>Sleeve reading</th>
+          <th>Thimble reading</th>
+          <th>Least count</th>
+          <th>Final reading</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>5.5 mm</td><td>28</td><td>0.01 mm</td><td></td></tr>
+        <tr><td>7.0 mm</td><td>42</td><td>0.01 mm</td><td></td></tr>
+      </tbody>
+    </table>
+    <p>Micrometer parts:</p>
+    <div class="short-lines">
+      <span class="answer-line"></span>
+      <span class="answer-line"></span>
+    </div>
+
+    <h2>Section C - Marking and Threading <span class="marks">20 marks</span></h2>
+
+    <p><strong>7. What is the purpose of center punching before drilling?</strong> <strong>(4 marks)</strong></p>
+    <div class="short-lines">
+      <span class="answer-line"></span>
+      <span class="answer-line"></span>
+    </div>
+
+    <p><strong>8. Write the correct center point marking procedure.</strong> <strong>(6 marks)</strong></p>
+    <ol>
+      <li><span class="answer-line"></span></li>
+      <li><span class="answer-line"></span></li>
+      <li><span class="answer-line"></span></li>
+      <li><span class="answer-line"></span></li>
+      <li><span class="answer-line"></span></li>
+      <li><span class="answer-line"></span></li>
+    </ol>
+
+    <p><strong>9. Explain the difference between a tap and a die.</strong> <strong>(4 marks)</strong></p>
+    <div class="short-lines">
+      <span class="answer-line"></span>
+      <span class="answer-line"></span>
+    </div>
+
+    <p><strong>10. Write the process for tapping or dieing.</strong> <strong>(6 marks)</strong></p>
+    <div class="short-lines">
+      <span class="answer-line"></span>
+      <span class="answer-line"></span>
+      <span class="answer-line"></span>
+    </div>
+
+    <h2>Section D - Workshop Tools and PPE <span class="marks">30 marks</span></h2>
+
+    <p><strong>11. Write the use of each workshop tool.</strong> <strong>(14 marks)</strong></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Tool</th>
+          <th>Use</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Hacksaw</td><td></td></tr>
+        <tr><td>Handsaw</td><td></td></tr>
+        <tr><td>Screwdriver</td><td></td></tr>
+        <tr><td>Spanner / wrench</td><td></td></tr>
+        <tr><td>Pliers</td><td></td></tr>
+        <tr><td>Hammer</td><td></td></tr>
+        <tr><td>Bench vice</td><td></td></tr>
+      </tbody>
+    </table>
+
+    <p><strong>12. Match each PPE item with its safety purpose.</strong> <strong>(12 marks)</strong></p>
+    <table>
+      <thead>
+        <tr>
+          <th>PPE item</th>
+          <th>Safety purpose</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Safety shoes</td><td></td></tr>
+        <tr><td>Safety glasses</td><td></td></tr>
+        <tr><td>Gloves</td><td></td></tr>
+        <tr><td>Ear protection</td><td></td></tr>
+        <tr><td>Face shield</td><td></td></tr>
+        <tr><td>Overalls</td><td></td></tr>
+      </tbody>
+    </table>
+
+    <p><strong>13. Why is PPE important in a workshop?</strong> <strong>(4 marks)</strong></p>
+    <div class="short-lines">
+      <span class="answer-line"></span>
+      <span class="answer-line"></span>
+    </div>
+
+    <section class="answer-key">
+      <h2>Answer Key - For Revision</h2>
+
+      <h3>Section A</h3>
+      <p>Accept correctly named drill-machine labels from the course material:</p>
+      <ul>
+        <li>Bed</li>
+        <li>Pillar</li>
+        <li>Swivel table</li>
+        <li>Motor</li>
+        <li>Stepped pulley</li>
+        <li>Spindle</li>
+        <li>Chuck</li>
+        <li>Drill bit</li>
+        <li>Hand wheel</li>
+        <li>Belt / belt guard where shown in the diagram</li>
+        <li>Feed lever / handle where shown in the diagram</li>
+      </ul>
+
+      <table>
+        <thead>
+          <tr><th>Part</th><th>Function</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Bed</td><td>Supports the machine.</td></tr>
+          <tr><td>Pillar</td><td>Vertical support column.</td></tr>
+          <tr><td>Swivel table</td><td>Holds the workpiece and can be adjusted.</td></tr>
+          <tr><td>Motor</td><td>Provides power to rotate the drill.</td></tr>
+          <tr><td>Stepped pulley</td><td>Changes drilling speed.</td></tr>
+          <tr><td>Spindle</td><td>Rotating shaft that carries the chuck.</td></tr>
+          <tr><td>Chuck</td><td>Holds the drill bit.</td></tr>
+          <tr><td>Drill bit</td><td>Cuts the hole.</td></tr>
+          <tr><td>Hand wheel / feed lever</td><td>Moves the spindle and drill bit up and down.</td></tr>
+          <tr><td>Belt guard</td><td>Covers the belt and pulley for safety.</td></tr>
+          <tr><td>Drive belt</td><td>Transfers rotation from motor pulley to spindle pulley.</td></tr>
+          <tr><td>Head</td><td>Holds the spindle, pulley, and feed mechanism.</td></tr>
+          <tr><td>Table clamp / lock</td><td>Locks the table position.</td></tr>
+        </tbody>
+      </table>
+
+      <p>Safety: clamp the workpiece, remove chuck key, wear eye protection, use correct speed, use cutting oil for metal, keep hands away from rotating parts.</p>
+
+      <h3>Section B</h3>
+      <p>Vernier caliper parts: outside jaws, inside jaws, main scale, Vernier scale, depth rod, locking screw/fine adjustment. Uses: measuring outside, inside, depth, and accurate small dimensions.</p>
+      <p>Vernier readings: 12.10 mm, 24.16 mm, 36.06 mm.</p>
+      <p>Micrometer parts: frame, anvil, spindle, measuring faces, sleeve, thimble, ratchet stop, spindle lock.</p>
+      <p>Micrometer readings: 5.78 mm, 7.42 mm.</p>
+
+      <h3>Section C</h3>
+      <p>Center punching marks the drilling point, prevents drill-bit slipping, and helps drill the hole in the correct place.</p>
+      <p>Procedure: clean workpiece, measure position, mark using steel rule/scriber, check measurement, place punch on mark, hold vertical, strike lightly, check mark, deepen if correct.</p>
+      <p>Tap cuts internal thread in a hole. Die cuts external thread on a rod or bolt.</p>
+      <p>Tapping/dieing process: select correct tool, secure work, apply cutting oil, keep tool straight, turn forward and slightly backward to break chips, continue until thread is complete.</p>
+
+      <h3>Section D</h3>
+      <p>Tools: hacksaw cuts metal/plastic pipes and rods; handsaw cuts wood; screwdriver drives/removes screws; spanner turns nuts/bolts; pliers grip/twist/cut small parts or wires; hammer applies force; bench vice holds work firmly.</p>
+      <p>PPE: safety shoes protect feet; safety glasses protect eyes; gloves protect hands; ear protection protects hearing; face shield protects face; overalls protect body and clothing.</p>
+      <p>PPE is important because it reduces injury risk during workshop work.</p>
+    </section>
+  </main>
+</body>
+</html>

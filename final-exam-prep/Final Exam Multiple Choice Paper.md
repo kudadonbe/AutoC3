@@ -2,7 +2,7 @@
 
 > Source note: This paper was created from the earlier combined revision notes,
 > which include lecturer content and supplementary assignment/general workshop
-> material. Use `FINAL_EXAM_SOURCE_VERIFIED_QUESTIONS_AND_ANSWERS.md` for
+> material. Use `Final Exam Source Verified Questions And Answers.md` for
 > lecturer-PowerPoint-only teaching in BWP01, AEP01, VMR01 order.
 
 Name: ________________________________

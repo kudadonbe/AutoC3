@@ -3,7 +3,7 @@
 > Source note: This older practice set includes lecturer material and
 > supplementary assignment/general workshop content. For lecturer-PowerPoint-
 > only questions in BWP01, AEP01, VMR01 order, use
-> `FINAL_EXAM_SOURCE_VERIFIED_QUESTIONS_AND_ANSWERS.md`.
+> `Final Exam Source Verified Questions And Answers.md`.
 
 Try answering first, then check the answer.
 
@@ -133,7 +133,7 @@ Answer: Temporarily holds work securely during cutting, drilling, gluing, or ass
 
 ## VMR01 Questions
 
-Use these together with `modules/VMR01-vehicle-maintenance-and-repair/final-exam-prep/VMR01_PRACTICE_QUESTIONS.md`.
+Use these together with `VMR01 Chapter Notes QA.md` and `VMR01 Exam Topics Answers.md`.
 
 1. What information goes on a job card?
 Answer: Customer details, vehicle details, complaint, work requested, inspection findings, parts/labor, technician, date, and final checks.

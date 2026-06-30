@@ -7,11 +7,10 @@ This is a coursework archive for ME03ARM Certificate III in Automotive Repair & 
 - `course-documents/`: institution-wide documents, grouped as `calendars/`, `forms/`, and `policies/`.
 - `modules/`: module-specific course material.
   - Use module folders such as `AEP01-automotive-engine-practice/`.
-  - Store slides, PDFs, and unit material in `learning-materials/`.
+  - Store lecturer slides and unit material in `learning-materials/`.
+  - Store manufacturer manuals and reference PDFs in the relevant assignment's `references/` folder.
   - Store module forms in `forms/`.
-  - Store exam notes in `final-exam-prep/` where relevant.
-- `final-exam-prep/`: combined AEP01, BWP01, and VMR01 final exam revision files.
-- `templates/`: reusable coursework templates.
+- `final-exam-prep/`: the single home for all final exam revision (AEP01, BWP01, VMR01). Add exam notes here, not in per-module folders.
 - `MATERIALS_INDEX.md`: update this when adding or reorganizing material.
 
 ## Build, Test, and Development Commands
@@ -28,13 +27,16 @@ Use these to confirm added files, changed docs, and module placement before comm
 
 ## Style & Naming Conventions
 
-Use clear, descriptive filenames with title case for course assets:
+Use clear, descriptive **Title Case filenames with spaces** for every file (course assets and generated study notes alike):
 
 - `Chapter 01 - Understand Automotive Engine Components and Workshop Safety.pptx`
 - `Basic Workshop Practice.pptx`
-- `FINAL_EXAM_THREE_MODULE_STUDY_GUIDE.md`
+- `Final Exam Three Module Study Guide.md`
+- `VMR01 Chapter Notes QA.md`
 
-Prefer consistent folder names across modules: `learning-materials/`, `forms/`, `revision-materials/`, and `final-exam-prep/`. Keep Markdown concise, with standard headings and bullet lists. Do not rename source PDFs/PPTX/DOCX files unless the new name improves clarity and preserves meaning.
+The only exceptions are the conventional top-level meta-docs, which keep their standard names: `README.md`, `AGENTS.md`, `CLAUDE.md`, and `MATERIALS_INDEX.md`.
+
+Prefer consistent folder names across modules: `learning-materials/`, `forms/`, and `revision-materials/`. Keep Markdown concise, with standard headings and bullet lists. Do not rename source PDFs/PPTX/DOCX files unless the new name improves clarity and preserves meaning.
 
 ## Testing Guidelines
 

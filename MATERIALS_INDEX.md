@@ -17,12 +17,19 @@ This index lists the added course material by location.
 
 ## Final Exam Preparation
 
+All final exam preparation lives in one place: `final-exam-prep/`.
+
 - `final-exam-prep/`
+  - Source-verified questions and answers in BWP01, AEP01, VMR01 teaching order (authoritative, lecturer-slides only)
   - Combined AEP01, BWP01, and VMR01 final exam study guide
+  - AEP01 exam topics answers for engine basics, four-stroke cycle, components, timing, compression, and faults
+  - BWP01 exam topics answers for drill machine, measuring tools, threading, workshop tools, and PPE
+  - VMR01 exam topics answers for fuel system, brake system, suspension, steering, and drive types
+  - VMR01 chapter-by-chapter exam Q&A notes covering all 16 chapters (from lecturer slides)
   - Combined practice questions
   - Combined multiple choice paper
-  - Source-verified questions and answers in BWP01, AEP01, VMR01 teaching order
   - Last-day checklist
+  - BWP01 printable HTML test paper (`BWP01 Test Paper.html`) with drill-machine diagram (`Exam Diagram.png`)
 
 ## Modules
 
@@ -36,7 +43,9 @@ This index lists the added course material by location.
 - `modules/AEP01-automotive-engine-practice/learning-materials/`
   - Automotive Engine Practice chapters 1, 2, 2A, and 3
 - `modules/AEP01-automotive-engine-practice/assignment-1-qg15de-engine/`
-  - QG15DE practical assignment report, references, photos, and measurements
+  - QG15DE practical assignment report (Markdown, HTML, and PDF)
+  - `references/` - QG15DE engine reference manual
+  - `photos/` and `measurements/` - practical evidence
 
 ### BWP01 - Basic Workshop Practice
 
@@ -49,8 +58,8 @@ This index lists the added course material by location.
   - Chapters 1 through 16
 - `modules/VMR01-vehicle-maintenance-and-repair/forms/`
   - Job Card workbook
-- `modules/VMR01-vehicle-maintenance-and-repair/final-exam-prep/`
-  - Final exam study guide, practice questions, and last-day checklist
+
+  VMR01 exam preparation is consolidated under the root `final-exam-prep/` folder.
 
 ### WHS01 - Workplace Health and Safety
 

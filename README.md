@@ -35,16 +35,17 @@ The goal is to keep all course work in one structured location so that practical
 
 See `MATERIALS_INDEX.md` for the organized list of added course documents, lecture slides, revision files, forms, and regulations.
 
-## Suggested Structure
+## Repository Structure
 
 ```text
 AutoC3/
   README.md
-  course-documents/
+  MATERIALS_INDEX.md          # index of all added course material
+  course-documents/           # institution-wide documents
     calendars/
     forms/
     policies/
-  final-exam-prep/
+  final-exam-prep/            # all final exam revision (AEP01, BWP01, VMR01)
   modules/
     BBS01-basic-business-skills/
       learning-materials/
@@ -57,18 +58,14 @@ AutoC3/
     AEP01-automotive-engine-practice/
       learning-materials/
       assignment-1-qg15de-engine/
-        QG15DE_ENGINE_ASSIGNMENT_REPORT.md
-        references/
+        QG15DE Engine Assignment Report.md   # also .html and .pdf
+        references/                          # QG15DE engine reference manual
         photos/
         measurements/
     VMR01-vehicle-maintenance-and-repair/
-      learning-materials/
+      learning-materials/                    # Chapters 01-16
       forms/
-      final-exam-prep/
-  templates/
 ```
-
-## Current Practical Work
 
 ## Final Exam Preparation
 
@@ -82,7 +79,7 @@ Combined revision files are available in `final-exam-prep/`.
 
 ### AEP01 - Automotive Engine Practice
 
-Current practical assignment:
+Practical assignment (completed):
 
 ```text
 Assignment 1 Practical Test
@@ -128,4 +125,6 @@ Key engine details:
 
 ## Status
 
-This repository is a personal coursework archive for the Maldives Polytechnic automotive programme.
+Coursework is complete; the final exam (AEP01, BWP01, VMR01) is the only remaining
+item. This repository is the finalized personal reference archive for the
+Maldives Polytechnic ME03ARM programme.

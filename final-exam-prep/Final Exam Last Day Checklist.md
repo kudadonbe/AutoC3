@@ -1,7 +1,7 @@
 # Final Exam Last Day Checklist: AEP01, BWP01, VMR01
 
 > Source note: Use
-> `FINAL_EXAM_SOURCE_VERIFIED_QUESTIONS_AND_ANSWERS.md` as the authoritative
+> `Final Exam Source Verified Questions And Answers.md` as the authoritative
 > lecturer-PowerPoint-only teaching guide. Study it in BWP01, AEP01, VMR01
 > order.
 
